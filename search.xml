@@ -17,11 +17,24 @@
     
     
     <entry>
-      <title>java环境变量配置</title>
-      <link href="/2019/08/21/java%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E9%85%8D%E7%BD%AE/"/>
-      <url>/2019/08/21/java%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E9%85%8D%E7%BD%AE/</url>
+      <title>游戏</title>
+      <link href="/2019/08/21/%E6%B8%B8%E6%88%8F/"/>
+      <url>/2019/08/21/%E6%B8%B8%E6%88%8F/</url>
       
-        <content type="html"><![CDATA[<h2 id="1-环境准备"><a href="#1-环境准备" class="headerlink" title="1.环境准备"></a>1.环境准备</h2><ul><li>首先需要在<a href="https://www.oracle.com/technetwork/java/javase/downloads/jdk11-downloads-5066655.html" target="_blank" rel="noopener">官网下载</a>jdk JDK默认安装后jdk和jre都在<strong>C:\Program Files\Java</strong>目录下。<br><br><img src="java%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E9%85%8D%E7%BD%AE/01.png" alt><br></li></ul><hr><h2 id="2-环境变量配置"><a href="#2-环境变量配置" class="headerlink" title="2.环境变量配置"></a>2.环境变量配置</h2><ul><li>配置环境变量：右击“我的电脑”–&gt;”属性”–&gt;”高级系统设置”–&gt;”高级”–&gt;”环境变量” <br><ul><li>在系统变量里新建”JAVA_HOME”变量，变量值为：C:\Program Files\Java\jdk1.8.0_60（根据自己的jdk的安装路径填写）<br><img src="/2019/08/21/java环境变量配置/02.png" title="This is an example image"><br></li><li>在系统变量里新建”classpath”变量，变量值为：<strong>.;%JAVA_HOME%\lib;%JAVA_HOME%\lib\tools.jar</strong><br></li><li>找到path变量（已存在不用新建）添加变量值:<strong>%JAVA_HOME%\bin;%JAVA_HOME%\jre\bin</strong><br><br>注意变量值之间用”;”隔开。注意原来Path的变量值末尾有没有;号，如果没有，先输入;号再输入。如果你的系统是Windows10，就相对方便多了，不用担心这个”;”。<br></li></ul></li><li><strong>“Windows+R”</strong>–&gt;输入“<strong>cmd</strong>”–&gt;<strong>Enter</strong>，输入<strong>java -version</strong>(记得中间有个空格)，如果显示jdk版本信息就说明环境变量配置成功了。<br><img src="/2019/08/21/java环境变量配置/03.png" title="This is an example image"><br></li></ul><hr>]]></content>
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>java环境变量配置</title>
+      <link href="/2019/08/21/java%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E9%85%8D%E7%BD%AE-1/"/>
+      <url>/2019/08/21/java%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E9%85%8D%E7%BD%AE-1/</url>
+      
+        <content type="html"><![CDATA[<h2 id="1-环境准备"><a href="#1-环境准备" class="headerlink" title="1.环境准备"></a>1.环境准备</h2><ul><li>首先需要在<a href="https://www.oracle.com/technetwork/java/javase/downloads/jdk11-downloads-5066655.html" target="_blank" rel="noopener">官网下载</a>jdk JDK默认安装后jdk和jre都在<strong>C:\Program Files\Java</strong>目录下。<br><br><img src="java%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E9%85%8D%E7%BD%AE-1/01.png" alt><br></li></ul><hr><h2 id="2-环境变量配置"><a href="#2-环境变量配置" class="headerlink" title="2.环境变量配置"></a>2.环境变量配置</h2><ul><li>配置环境变量：右击“我的电脑”–&gt;”属性”–&gt;”高级系统设置”–&gt;”高级”–&gt;”环境变量” <br><ul><li>在系统变量里新建”JAVA_HOME”变量，变量值为：C:\Program Files\Java\jdk1.8.0_60（根据自己的jdk的安装路径填写）<br><img src="/2019/08/21/java环境变量配置-1/02.png" title="This is an example image"><br></li><li>在系统变量里新建”classpath”变量，变量值为：<strong>.;%JAVA_HOME%\lib;%JAVA_HOME%\lib\tools.jar</strong><br></li><li>找到path变量（已存在不用新建）添加变量值:<strong>%JAVA_HOME%\bin;%JAVA_HOME%\jre\bin</strong><br><br>注意变量值之间用”;”隔开。注意原来Path的变量值末尾有没有;号，如果没有，先输入;号再输入。如果你的系统是Windows10，就相对方便多了，不用担心这个”;”。<br></li></ul></li><li><strong>“Windows+R”</strong>–&gt;输入“<strong>cmd</strong>”–&gt;<strong>Enter</strong>，输入<strong>java -version</strong>(记得中间有个空格)，如果显示jdk版本信息就说明环境变量配置成功了。<br><img src="/2019/08/21/java环境变量配置-1/03.png" title="This is an example image"><br></li></ul><hr>]]></content>
       
       
       <categories>
