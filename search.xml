@@ -5,8 +5,8 @@
     
     <entry>
       <title>我的博客</title>
-      <link href="/2019/08/22/%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2/"/>
-      <url>/2019/08/22/%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2/</url>
+      <link href="/myblog/2019/08/22/%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2/"/>
+      <url>/myblog/2019/08/22/%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2/</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -18,8 +18,8 @@
     
     <entry>
       <title>Hello World</title>
-      <link href="/2019/08/22/hello-world/"/>
-      <url>/2019/08/22/hello-world/</url>
+      <link href="/myblog/2019/08/22/hello-world/"/>
+      <url>/myblog/2019/08/22/hello-world/</url>
       
         <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
       
@@ -31,8 +31,8 @@
     
     <entry>
       <title>游戏</title>
-      <link href="/2019/08/21/%E6%B8%B8%E6%88%8F/"/>
-      <url>/2019/08/21/%E6%B8%B8%E6%88%8F/</url>
+      <link href="/myblog/2019/08/21/%E6%B8%B8%E6%88%8F/"/>
+      <url>/myblog/2019/08/21/%E6%B8%B8%E6%88%8F/</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -44,10 +44,10 @@
     
     <entry>
       <title>java环境变量配置</title>
-      <link href="/2019/08/21/java%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E9%85%8D%E7%BD%AE-1/"/>
-      <url>/2019/08/21/java%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E9%85%8D%E7%BD%AE-1/</url>
+      <link href="/myblog/2019/08/21/java%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E9%85%8D%E7%BD%AE-1/"/>
+      <url>/myblog/2019/08/21/java%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E9%85%8D%E7%BD%AE-1/</url>
       
-        <content type="html"><![CDATA[<h2 id="1-环境准备"><a href="#1-环境准备" class="headerlink" title="1.环境准备"></a>1.环境准备</h2><ul><li>首先需要在<a href="https://www.oracle.com/technetwork/java/javase/downloads/jdk11-downloads-5066655.html" target="_blank" rel="noopener">官网下载</a>jdk JDK默认安装后jdk和jre都在<strong>C:\Program Files\Java</strong>目录下。<br><br><img src="java%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E9%85%8D%E7%BD%AE-1/01.png" alt><br></li></ul><hr><h2 id="2-环境变量配置"><a href="#2-环境变量配置" class="headerlink" title="2.环境变量配置"></a>2.环境变量配置</h2><ul><li>配置环境变量：右击“我的电脑”–&gt;”属性”–&gt;”高级系统设置”–&gt;”高级”–&gt;”环境变量” <br><ul><li>在系统变量里新建”JAVA_HOME”变量，变量值为：C:\Program Files\Java\jdk1.8.0_60（根据自己的jdk的安装路径填写）<br><img src="/2019/08/21/java环境变量配置-1/02.png" title="This is an example image"><br></li><li>在系统变量里新建”classpath”变量，变量值为：<strong>.;%JAVA_HOME%\lib;%JAVA_HOME%\lib\tools.jar</strong><br></li><li>找到path变量（已存在不用新建）添加变量值:<strong>%JAVA_HOME%\bin;%JAVA_HOME%\jre\bin</strong><br><br>注意变量值之间用”;”隔开。注意原来Path的变量值末尾有没有;号，如果没有，先输入;号再输入。如果你的系统是Windows10，就相对方便多了，不用担心这个”;”。<br></li></ul></li><li><strong>“Windows+R”</strong>–&gt;输入“<strong>cmd</strong>”–&gt;<strong>Enter</strong>，输入<strong>java -version</strong>(记得中间有个空格)，如果显示jdk版本信息就说明环境变量配置成功了。<br><img src="/2019/08/21/java环境变量配置-1/03.png" title="This is an example image"><br></li></ul><hr>]]></content>
+        <content type="html"><![CDATA[<h2 id="1-环境准备"><a href="#1-环境准备" class="headerlink" title="1.环境准备"></a>1.环境准备</h2><ul><li>首先需要在<a href="https://www.oracle.com/technetwork/java/javase/downloads/jdk11-downloads-5066655.html" target="_blank" rel="noopener">官网下载</a>jdk JDK默认安装后jdk和jre都在<strong>C:\Program Files\Java</strong>目录下。<br><br><img src="java%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E9%85%8D%E7%BD%AE-1/01.png" alt><br></li></ul><hr><h2 id="2-环境变量配置"><a href="#2-环境变量配置" class="headerlink" title="2.环境变量配置"></a>2.环境变量配置</h2><ul><li>配置环境变量：右击“我的电脑”–&gt;”属性”–&gt;”高级系统设置”–&gt;”高级”–&gt;”环境变量” <br><ul><li>在系统变量里新建”JAVA_HOME”变量，变量值为：C:\Program Files\Java\jdk1.8.0_60（根据自己的jdk的安装路径填写）<br><img src="/myblog/2019/08/21/java环境变量配置-1/02.png" title="This is an example image"><br></li><li>在系统变量里新建”classpath”变量，变量值为：<strong>.;%JAVA_HOME%\lib;%JAVA_HOME%\lib\tools.jar</strong><br></li><li>找到path变量（已存在不用新建）添加变量值:<strong>%JAVA_HOME%\bin;%JAVA_HOME%\jre\bin</strong><br><br>注意变量值之间用”;”隔开。注意原来Path的变量值末尾有没有;号，如果没有，先输入;号再输入。如果你的系统是Windows10，就相对方便多了，不用担心这个”;”。<br></li></ul></li><li><strong>“Windows+R”</strong>–&gt;输入“<strong>cmd</strong>”–&gt;<strong>Enter</strong>，输入<strong>java -version</strong>(记得中间有个空格)，如果显示jdk版本信息就说明环境变量配置成功了。<br><img src="/myblog/2019/08/21/java环境变量配置-1/03.png" title="This is an example image"><br></li></ul><hr>]]></content>
       
       
       <categories>
