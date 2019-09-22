@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <meta name="renderer" content="webkit">
+
+  
+  <title>go语言入门学习文档 | 耀龙的个人博客</title>
+
+  <link rel="shortcut icon" href="/images/favicon.png">
+  <link rel="alternate" href="/atom.xml" title="耀龙的个人博客">
+  <meta name="description" content="go语言入门">
+<meta name="keywords" content="go">
+<meta property="og:type" content="article">
+<meta property="og:title" content="go语言入门学习文档">
+<meta property="og:url" content="yaolong.top/2019/09/22/go语言入门学习文档/index.html">
+<meta property="og:site_name" content="耀龙的个人博客">
+<meta property="og:description" content="go语言入门">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-09-22T14:18:47.994Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="go语言入门学习文档">
+<meta name="twitter:description" content="go语言入门">
+
+  <meta name="format-detection" content="telephone=no,email=no">
+  <meta name="theme-color" content="#9C27B0">
+  <meta name="description" content="go语言入门">
+  <meta name="keywords" content=",go">
+
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="耀龙的个人博客">
+  <meta name="msapplication-starturl" content="yaolong.top/2019/09/22/go语言入门学习文档/">
+  <meta name="msapplication-navbutton-color" content="#9C27B0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="耀龙的个人博客">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <link rel="apple-touch-icon" href="/images/favicon.png">
+
+  
+    <meta property="article:published_time" content="Sun Sep 22 2019 22:13:39 GMT+0800">
+    <meta property="article:modified_time" content="Sun Sep 22 2019 22:18:47 GMT+0800">
+  
+
+  
+    <link rel="canonical" href="yaolong.top/2019/09/22/go语言入门学习文档/">
+  
+
+  
+  
+
+  
+  
+  
+
+  <link rel="stylesheet" href="/css/mdui.css">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="mdui-appbar-with-toolbar mdui-drawer-body-left mdui-theme-primary-indigo mdui-theme-accent-pink">
+  <script>var a=localStorage.getItem("mdui-theme-layout-dark");if(a){document.getElementsByTagName("body")[0].className+=" mdui-theme-layout-dark"};</script>
+  <header id="header" class="mdui-appbar mdui-appbar-fixed mdui-appbar-scroll-hide mdui-appbar-inset">
+  <div class="mdui-toolbar mdui-color-theme">
+    <a href="javascript:;" class="mdui-btn mdui-btn-icon" mdui-drawer="{target: '#sidebar', swipe: true}"><i class="mdui-icon material-icons">menu</i></a>
+    <a href="/" class="mdui-typo-headline">耀龙的个人博客</a>
+    <div class="mdui-toolbar-spacer"></div>
+    <a href="javascript:;" class="mdui-btn mdui-btn-icon" mdui-dialog="{target: '#search'}" mdui-tooltip="{content: '搜索'}"><i class="mdui-icon material-icons">search</i></a>
+    <a href="/atom.xml" class="mdui-btn mdui-btn-icon" mdui-tooltip="{content: 'RSS'}"><i class="mdui-icon material-icons">rss_feed</i></a>
+  </div>
+</header>
+<div class="mdui-dialog" id="search">
+  
+    <div class="search-form">
+      <input type="search" class="search-form-input" placeholder="请输入关键字">
+    </div>
+    <div class="search-result" data-resource="/search.xml"></div>
+  
+</div>
+  <aside id="sidebar" class="mdui-drawer mdui-drawer-full-height">
+  <div class="mdui-grid-tile">
+    <img src="/images/banner.png" style="height: 160px;">
+    <img src="/images/myavatar.jpg" class="avatar-animation" style="position: absolute; top: 10%; left: 24px; width: 64px; height: 64px; border: 2px solid #fff; border-radius: 50%;">
+    <div class="mdui-grid-tile-actions">
+      <div class="mdui-grid-tile-text">
+        <div class="mdui-grid-tile-title">殷跃龙</div>
+        <div class="mdui-grid-tile-subtitle"><i class="mdui-icon material-icons">art_track</i></div>
+      </div>
+      
+        <div class="mdui-grid-tile-buttons">
+          <a href="mailto:1638538651@qq.com" class="mdui-btn mdui-btn-icon" mdui-tooltip="{content: '1638538651@qq.com'}"><i class="mdui-icon material-icons">email</i></a>
+        </div>
+      
+    </div>
+  </div>
+
+  <div class="mdui-list" mdui-collapse="{accordion: true}">
+    <a href="/" class="mdui-list-item mdui-ripple">
+      <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-blue">home</i>
+      <div class="mdui-list-item-content">主页</div>
+    </a>
+    <div class="mdui-collapse-item">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-deep-orange">inbox</i>
+        <div class="mdui-list-item-content">归档</div>
+        <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
+        
+        <a class="mdui-ripple sidebar_archives-link" href="/archives/2019/09/">九月 2019<span class="mdui-ripple sidebar_archives-count">3</span></a><a class="mdui-ripple sidebar_archives-link" href="/archives/2019/08/">八月 2019<span class="mdui-ripple sidebar_archives-count">3</span></a>
+        
+      </div>
+    </div>
+    <div class="mdui-collapse-item">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-green">chrome_reader_mode</i>
+        <div class="mdui-list-item-content">分类</div>
+        <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
+        
+        <a class="mdui-ripple sidebar_archives-link" href="/categories/编程/">编程<span class="mdui-ripple sidebar_archives-count">3</span></a>
+        
+      </div>
+    </div>
+    <div class="mdui-collapse-item">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-brown">bookmark</i>
+        <div class="mdui-list-item-content">标签</div>
+        <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
+        
+        <a class="mdui-ripple sidebar_archives-link" href="/tags/go/">go<span class="mdui-ripple sidebar_archives-count">2</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/java/">java<span class="mdui-ripple sidebar_archives-count">1</span></a>
+        
+      </div>
+    </div>
+    <a href="/about" class="mdui-list-item mdui-ripple">
+      <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-purple">person</i>
+      <div class="mdui-list-item-content">关于</div>
+    </a>
+  </div>
+
+  <div class="mdui-divider"></div>
+
+  <div class="mdui-list" mdui-collapse="{accordion: true}">
+    
+      <a href="/tagcloud" class="mdui-list-item mdui-ripple">标签云</a>
+    
+      <a href="/gallery" class="mdui-list-item mdui-ripple">画廊</a>
+    
+      <a href="/tv" class="mdui-list-item mdui-ripple">电视直播</a>
+    
+    <div class="mdui-collapse-item">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <div class="mdui-list-item-content">友情链接</div>
+        <i class="mdui-list-item-icon mdui-icon material-icons">link</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
+        
+          <a href="http://yaolong.top/" target="_blank" class="mdui-list-item mdui-ripple mdui-p-l-2 mdui-text-color-theme-accent" style="justify-content: center;">我的简历</a>
+        
+        
+      </div>
+    </div>
+  </div>
+</aside>
+  <main id="main" class="mdui-m-t-5 fadeIn animated">
+  <link rel="stylesheet" href="https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.css">
+  <style>#main article .mdui-card-content .center-block{display:block!important;margin-right:auto!important;margin-left:auto!important}</style>
+  <article class="mdui-card mdui-m-b-5">
+    <header class="mdui-card-media">
+      <img src="/images/random/material-10.png" style="max-height: 240px;">
+      <div class="mdui-card-media-covered">
+        <div class="mdui-card-primary">
+          <div class="mdui-card-primary-title">go语言入门学习文档</div>
+          <div class="mdui-card-primary-subtitle"><i class="iconfont">&#xe697;</i> 2019-09-22 / <i class="iconfont">&#xe601;</i> 殷跃龙 &nbsp;&nbsp; <span id="busuanzi_container_page_pv" style="display: none;"><i class="iconfont">&#xe7fd;</i> <span id="busuanzi_value_page_pv"></span></span></div>
+        </div>
+      </div>
+      <div class="mdui-card-menu">
+        
+          <button class="mdui-btn mdui-btn-icon mdui-text-color-white" mdui-menu="{target: '#qrcode', align: 'right'}"><i class="mdui-icon material-icons">devices</i></button>
+          <ul class="mdui-menu" id="qrcode">
+            
+              <li class="mdui-menu-item"><a class="mdui-text-center mdui-ripple">发送到手机</a></li>
+            
+            <li class="mdui-menu-item" disabled>
+              
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACXklEQVR42u3aQW7DMAwEwPz/0+21QGFnSUqKEYxORWAnGh9MdqnXz1evFx4eHh4eHh4e3sN4r3j9vf7q3v+f/7+r9z3J3vDw8PBO8t68ai+uub83fyj3V1b3hoeHh3eSl/xkcu/VJ0mRmO8NDw8P72m8CSBvl/Hw8PC+j3cFS170+b14eHh4z+flsUICSKKH5N6jWQseHh5ezJsMwHb//eH5Hh4eHt740FX1QewoBoVDV3h4eHgbeIuHT7fBbnW0FpWB3n8MeHh4eANedaO9bfVa56Q4RXUPDw8PbwNvPs4vh61B8VgQ4+Lh4eFt4PXa3LyBno/B8geEh4eHd4Y32VAeOvSGW9XQBA8PD+8Mr/p197HCZMSVB8SFMAIPDw9vA6/3op8c0po05c2WGg8PD+8IbxWpFxDnAzM8PDy8z/LWhrCT41l5k42Hh4f3BF6+5s10L/x984Dw8PDwjvOqhWFtUDu5Eg8PD+8Mrzr+rzbZ1QLTG8Lh4eHhneQlr/J8JZvukRacKcPDw8NbxMtDgd7PV8OL/HjB5a/g4eHhbeZVqb3DBNXvzw9m4eHh4T2BN4lrX61VDX+bKTUeHh7eIl4SJUza6N7WRyEIHh4e3mbeZFhVPU6aF5X8QEOhpcbDw8NbxOs1vtXBVW/TzZACDw8P7wiv1xDPjxesHbDh4eHhneflQ6+cncfEycOKYhQ8PDy8h/Hy8Ld3ZXVviwsDHh4e3jZejqkWlQUFCQ8PD+8gr9oc541ytRj0QmE8PDy8k7xVh0pXxRnVR4aHh4d3kvd9Cw8PDw8PDw8P7wHrF5t2WNxTieqDAAAAAElFTkSuQmCC">
+              
+            </li>
+          </ul>
+        
+        
+          <button class="mdui-btn mdui-btn-icon mdui-text-color-white" mdui-menu="{target: '#share_menu', align: 'right'}"><i class="mdui-icon material-icons">share</i></button>
+          <ul class="mdui-menu" id="share_menu">
+            <li class="mdui-menu-item">
+              <a href="http://service.weibo.com/share/share.php?appkey=&title=go语言入门学习文档&url=yaolong.top/2019/09/22/go语言入门学习文档/&pic=yaolong.top/images/favicon.png&searchPic=false&style=simple" target="_blank" class="mdui-ripple">分享到微博</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="https://twitter.com/intent/tweet?text=go语言入门学习文档&url=yaolong.top/2019/09/22/go语言入门学习文档/&via=殷跃龙" target="_blank" class="mdui-ripple">分享到Twitter</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="https://www.facebook.com/sharer/sharer.php?u=yaolong.top/2019/09/22/go语言入门学习文档/" target="_blank" class="mdui-ripple">分享到Facebook</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="https://plus.google.com/share?url=yaolong.top/2019/09/22/go语言入门学习文档/" target="_blank" class="mdui-ripple">分享到Google+</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="https://www.linkedin.com/shareArticle?mini=true&url=yaolong.top/2019/09/22/go语言入门学习文档/&title=go语言入门学习文档" target="_blank" class="mdui-ripple">分享到LinkedIn</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="http://connect.qq.com/widget/shareqq/index.html?site=耀龙的个人博客&title=go语言入门学习文档&summary=吃最少的经济 挨最毒的打&pics=yaolong.top/images/favicon.png&url=yaolong.top/2019/09/22/go语言入门学习文档/" target="_blank" class="mdui-ripple">分享到QQ</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="https://telegram.me/share/url?url=yaolong.top/2019/09/22/go语言入门学习文档/&text=go语言入门学习文档" target="_blank" class="mdui-ripple">分享到Telegram</a>
+            </li>
+          </ul>
+        
+      </div>
+    </header>
+    <div class="mdui-card-content mdui-typo">
+      <p><a href="go语言入门学习文档/go开发实战.doc">黑马go语言学习文档</a></p>
+
+      <blockquote class="mdui-m-t-5">
+        
+        <strong>本文链接：</strong><a href="yaolong.top/2019/09/22/go语言入门学习文档/">yaolong.top/2019/09/22/go语言入门学习文档/</a>
+      </blockquote>
+      
+        <div class="mdui-text-center">
+          <button class="mdui-fab mdui-color-deep-orange mdui-text-color-white mdui-ripple" mdui-dialog="{target: '#donate'}" mdui-tooltip="{content: '打赏', position: 'top'}"><i class="mdui-icon material-icons">thumb_up</i></button>
+        </div>
+      
+    </div>
+    <footer class="mdui-card-actions">
+      
+        <a class="mdui-ripple article_categories-link" href="/categories/编程/">编程</a>
+      
+      
+        <a class="mdui-ripple article_tags-link" href="/tags/go/">go</a>
+      
+    </footer>
+    
+      <div class="mdui-dialog" id="donate">
+        <div class="mdui-tab mdui-tab-centered" mdui-tab>
+          
+            <a href="#donate-0" class="mdui-ripple">支付宝</a>
+          
+            <a href="#donate-1" class="mdui-ripple">微信支付</a>
+          
+        </div>
+        
+        
+          <div id="donate-0" class="mdui-p-a-2 mdui-typo mdui-text-center">
+            
+              <img src="/images/alipay.jpg" style="width: 300px;">
+            
+          </div>
+        
+          <div id="donate-1" class="mdui-p-a-2 mdui-typo mdui-text-center">
+            
+              <img src="/images/wechat.jpg" style="width: 300px;">
+            
+          </div>
+        
+      </div>
+    
+  </article>
+  <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+  <script>$("#main article .mdui-card-content img.fancybox").on("click",function(e){$.fancybox.open({src:$(this).attr("src")});});</script>
+
+
+  <nav id="paginator">
+    
+    <div class="spacer"></div>
+    
+      <a rel="next" class="extend next" href="/2019/09/22/go语言环境变量配置/">
+        下一篇&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button aria-label="next" class="mdui-btn mdui-btn-raised mdui-btn-dense mdui-btn-icon mdui-color-theme-accent mdui-ripple"><i class="mdui-icon material-icons">arrow_forward</i></button>
+      </a>
+    
+  </nav>
+
+
+  <div id="comment" class="mdui-m-t-5">
+    <div class="vcomment"></div>
+<script src="//cdnjs.loli.net/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+  var GUEST_INFO = ['nick', 'mail', 'link'];
+  var guest_info = 'nick,mail,link'.split(',').filter(function (item) {
+    return GUEST_INFO.indexOf(item) > -1;
+  });
+  var notify = 'false' === 'true';
+  var verify = 'false' === 'true';
+  new Valine({
+    av: AV,
+    el: '.vcomment',
+    notify: notify,
+    verify: verify,
+    appId: "qMIo0vb5e8uDx7mfvb4jhnfD-gzGzoHsz",
+    appKey: "Q2GIKfbjU0JXIbJCi2dHecAs",
+    placeholder: "ヾﾉ≧∀≦)o来啊，快活啊!欢迎评论哟",
+    pageSize: '10',
+    avatar: 'mm',
+    lang: '',
+    guest_info: guest_info
+  });
+</script>
+  </div>
+
+
+</main>
+  <footer id="footer" class="mdui-m-t-5 mdui-p-y-3 mdui-color-theme">
+  <div class="mdui-p-y-0 mdui-text-center">
+    
+    
+    
+    
+    
+    
+    
+      <a href="https://github.com/yaolong1" target="_blank"><i class="mdui-p-a-1 mdui-icon iconfont mdui-text-color-theme-a100">&#xe7ab;</i></a>
+    
+    
+    
+    
+    
+      <a href="tencent://message/?uin=1638538651&Menu=yes" target="_blank"><i class="mdui-p-a-1 mdui-icon iconfont mdui-text-color-theme-a100">&#xe651;</i></a>
+    
+    
+  </div>
+  <div class="mdui-p-y-1 mdui-text-center">
+    Copyright &copy; 2019 - 2019 殷跃龙<br>
+    Powered by <a href="https://hexo.io/" target="_blank" class="mdui-text-color-theme-accent">Hexo</a>
+    <br>
+      <span id="busuanzi_container_site_pv" style="display: none;"><i class="iconfont">&#xe7fd;</i> <span id="busuanzi_value_site_pv"></span></span> &nbsp;&nbsp;
+      <span id="busuanzi_container_site_uv" style="display: none;"><i class="iconfont">&#xe601;</i> <span id="busuanzi_value_site_uv"></span></span>
+    
+  </div>
+</footer>
+  <button id="gotop" class="mdui-fab mdui-fab-fixed mdui-fab-hide mdui-ripple mdui-color-theme-accent"><i class="mdui-icon material-icons">arrow_upward</i></button>
+  <script async src="http://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script src="/js/mdui.js"></script>
+<script src="/js/script.js"></script>
+</body>
+</html>
