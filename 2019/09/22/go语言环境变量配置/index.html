@@ -8,30 +8,31 @@
   <meta name="renderer" content="webkit">
 
   
-  <title>我的博客 | 耀龙的个人博客</title>
+  <title>go语言环境变量配置 | 耀龙的个人博客</title>
 
   <link rel="shortcut icon" href="/images/favicon.png">
   <link rel="alternate" href="/atom.xml" title="耀龙的个人博客">
-  <meta name="description" content="吃最少的经济 挨最毒的打">
+  <meta name="description" content="go环境">
+<meta name="keywords" content="go">
 <meta property="og:type" content="article">
-<meta property="og:title" content="我的博客">
-<meta property="og:url" content="yaolong.top/2019/08/22/我的博客/index.html">
+<meta property="og:title" content="go语言环境变量配置">
+<meta property="og:url" content="yaolong.top/2019/09/22/go语言环境变量配置/index.html">
 <meta property="og:site_name" content="耀龙的个人博客">
-<meta property="og:description" content="吃最少的经济 挨最毒的打">
+<meta property="og:description" content="go环境">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-22T04:20:55.478Z">
+<meta property="og:updated_time" content="2019-09-22T08:00:51.514Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="我的博客">
-<meta name="twitter:description" content="吃最少的经济 挨最毒的打">
+<meta name="twitter:title" content="go语言环境变量配置">
+<meta name="twitter:description" content="go环境">
 
   <meta name="format-detection" content="telephone=no,email=no">
   <meta name="theme-color" content="#9C27B0">
-  <meta name="description" content="吃最少的经济 挨最毒的打">
-  <meta name="keywords" content>
+  <meta name="description" content="go环境">
+  <meta name="keywords" content=",go">
 
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="application-name" content="耀龙的个人博客">
-  <meta name="msapplication-starturl" content="yaolong.top/2019/08/22/我的博客/">
+  <meta name="msapplication-starturl" content="yaolong.top/2019/09/22/go语言环境变量配置/">
   <meta name="msapplication-navbutton-color" content="#9C27B0">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-title" content="耀龙的个人博客">
@@ -39,12 +40,12 @@
   <link rel="apple-touch-icon" href="/images/favicon.png">
 
   
-    <meta property="article:published_time" content="Thu Aug 22 2019 12:20:55 GMT+0800">
-    <meta property="article:modified_time" content="Thu Aug 22 2019 12:20:55 GMT+0800">
+    <meta property="article:published_time" content="Sun Sep 22 2019 15:22:08 GMT+0800">
+    <meta property="article:modified_time" content="Sun Sep 22 2019 16:00:51 GMT+0800">
   
 
   
-    <link rel="canonical" href="yaolong.top/2019/08/22/我的博客/">
+    <link rel="canonical" href="yaolong.top/2019/09/22/go语言环境变量配置/">
   
 
   
@@ -169,11 +170,11 @@
   <style>#main article .mdui-card-content .center-block{display:block!important;margin-right:auto!important;margin-left:auto!important}</style>
   <article class="mdui-card mdui-m-b-5">
     <header class="mdui-card-media">
-      <img src="/images/random/material-11.png" style="max-height: 240px;">
+      <img src="/images/random/material-5.png" style="max-height: 240px;">
       <div class="mdui-card-media-covered">
         <div class="mdui-card-primary">
-          <div class="mdui-card-primary-title">我的博客</div>
-          <div class="mdui-card-primary-subtitle"><i class="iconfont">&#xe697;</i> 2019-08-22 / <i class="iconfont">&#xe601;</i> 殷跃龙 &nbsp;&nbsp; <span id="busuanzi_container_page_pv" style="display: none;"><i class="iconfont">&#xe7fd;</i> <span id="busuanzi_value_page_pv"></span></span></div>
+          <div class="mdui-card-primary-title">go语言环境变量配置</div>
+          <div class="mdui-card-primary-subtitle"><i class="iconfont">&#xe697;</i> 2019-09-22 / <i class="iconfont">&#xe601;</i> 殷跃龙 &nbsp;&nbsp; <span id="busuanzi_container_page_pv" style="display: none;"><i class="iconfont">&#xe7fd;</i> <span id="busuanzi_value_page_pv"></span></span></div>
         </div>
       </div>
       <div class="mdui-card-menu">
@@ -185,7 +186,7 @@
             
             <li class="mdui-menu-item" disabled>
               
-                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAAB7UlEQVR42u3aQW6EMAwFUO5/6XZbqSL9dkBT8MtqNMNAHgvLsX18vWIdGBgYGBgYGBj/hnHE6/f1Z3f4+f36mt4eMDAwZjL+CG3LzZ3xqv/N94CBgTGZkYTOHcDZdpt7wMDAwCgGypydB24MDAyMnVvkQXPnVwwMDIytA2SQDq5LaRfsAQMDYxij2hi44/MH+hsYGBgPYZRHHPLHLItrSZC9cWYEAwPjUYzeIMVO2ndZ4wEDAwMjTuDyw2212dkcC8PAwHgpo/eYXuNzp8GAgYExk1E9ZK4ZyTjFfrMBAwNjGiMJoMnWk/BaHeMoD1tgYGC8mpEfOJOEsvpqqgU4DAyMaYxq8ndV2K02OzEwMCYzkvCap2t5Ca96lC1XDTEwMF7EuKqU1jvEJjAMDAyMPPDttDmbBbU1GAMDYwyjVyartj+T1BADAwMjL7dVk8IcnCed0QEYAwNjGKO63eTB1WJcObhjYGAMY+Rr51ibHHHz5BIDA2MOY39gq8fLkVFqiIGBMYDRC7Lr19FrG2wFXAwMjAGM3uB7YTwiKM/ld8bAwMCoNgDyQdW8DHdjwMXAwBjASBqfO2OvUdDHwMAYyUhSuupoxfrVrL+/sdyGgYHxQEavMXBV86CZSmJgYIxhPHdhYGBgYGBgYHx0fQPyeH2C6xcydgAAAABJRU5ErkJggg==">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACYUlEQVR42u3aS47jMAwFwNz/0tMHGET9SNq00SivgnxklRcS88TPvz99ffDw8PDw8PDw8F7G+8TX/7/qjXAeczIyHh4e3ibvl6X2OLlv73wb5wyYzA0PDw9vn3deys+/mizuyWMqzA0PDw/vlbxk6j3eBY8eDw8P72W8+eI+eY2Hh4f3Nl7+h79XXlcDiAeyFjw8PLyY1yt8d16vnu/h4eHhBbxmY1NwWDWBPdxThoeHh3fk3XHjanPAt0+rDxQPDw9vk5eUqufb5E2okzGjsAMPDw9vkTeZdB7g9raWwsPCw8PDW+f1GqHy4PWqUr65MeDh4eGNedUQodeYdcYni34zjMDDw8N7iJeUv3NeEkxE5T4eHh7ezbzqDfKYIN8A5tsMHh4e3iYvD16rDaaT0rxaXuPh4eE9y8uj2/zwrBr15gU9Hh4e3lO8ydSrC3feknV+vxnj4uHh4V3E6zVRVZulJsda+YPDw8PD2+TlU8nL38kRV75J4OHh4W3ycky1LE4K4mrrVXRfPDw8vJt5yaLfi33z8rraTHDBvoeHh4d3Uc2ZNFdVv9nbWkYNr3h4eHg38/L4dXKsNW9mxcPDw3sPr7cB5AdU1aO1agMWHh4e3j6veiWRa7UhoBcrF/Y9PDw8vEt5vYb7XsnbC3Pzx4qHh4e3yest1vPoIY88Cq0JeHh4eIu8fEFPplgNZJeyFjw8PLx1Xn701RunGiXj4eHhvZ+XxxaTltbzN/Hw8PDew5s0BOQhb76FVNut8PDw8DZ51eW+FyhUo43mp3h4eHg38/7ehYeHh4eHh4eH94LrB9VBqm67k51mAAAAAElFTkSuQmCC">
               
             </li>
           </ul>
@@ -194,35 +195,75 @@
           <button class="mdui-btn mdui-btn-icon mdui-text-color-white" mdui-menu="{target: '#share_menu', align: 'right'}"><i class="mdui-icon material-icons">share</i></button>
           <ul class="mdui-menu" id="share_menu">
             <li class="mdui-menu-item">
-              <a href="http://service.weibo.com/share/share.php?appkey=&title=我的博客&url=yaolong.top/2019/08/22/我的博客/&pic=yaolong.top/images/favicon.png&searchPic=false&style=simple" target="_blank" class="mdui-ripple">分享到微博</a>
+              <a href="http://service.weibo.com/share/share.php?appkey=&title=go语言环境变量配置&url=yaolong.top/2019/09/22/go语言环境变量配置/&pic=yaolong.top/images/favicon.png&searchPic=false&style=simple" target="_blank" class="mdui-ripple">分享到微博</a>
             </li>
             <li class="mdui-menu-item">
-              <a href="https://twitter.com/intent/tweet?text=我的博客&url=yaolong.top/2019/08/22/我的博客/&via=殷跃龙" target="_blank" class="mdui-ripple">分享到Twitter</a>
+              <a href="https://twitter.com/intent/tweet?text=go语言环境变量配置&url=yaolong.top/2019/09/22/go语言环境变量配置/&via=殷跃龙" target="_blank" class="mdui-ripple">分享到Twitter</a>
             </li>
             <li class="mdui-menu-item">
-              <a href="https://www.facebook.com/sharer/sharer.php?u=yaolong.top/2019/08/22/我的博客/" target="_blank" class="mdui-ripple">分享到Facebook</a>
+              <a href="https://www.facebook.com/sharer/sharer.php?u=yaolong.top/2019/09/22/go语言环境变量配置/" target="_blank" class="mdui-ripple">分享到Facebook</a>
             </li>
             <li class="mdui-menu-item">
-              <a href="https://plus.google.com/share?url=yaolong.top/2019/08/22/我的博客/" target="_blank" class="mdui-ripple">分享到Google+</a>
+              <a href="https://plus.google.com/share?url=yaolong.top/2019/09/22/go语言环境变量配置/" target="_blank" class="mdui-ripple">分享到Google+</a>
             </li>
             <li class="mdui-menu-item">
-              <a href="https://www.linkedin.com/shareArticle?mini=true&url=yaolong.top/2019/08/22/我的博客/&title=我的博客" target="_blank" class="mdui-ripple">分享到LinkedIn</a>
+              <a href="https://www.linkedin.com/shareArticle?mini=true&url=yaolong.top/2019/09/22/go语言环境变量配置/&title=go语言环境变量配置" target="_blank" class="mdui-ripple">分享到LinkedIn</a>
             </li>
             <li class="mdui-menu-item">
-              <a href="http://connect.qq.com/widget/shareqq/index.html?site=耀龙的个人博客&title=我的博客&summary=吃最少的经济 挨最毒的打&pics=yaolong.top/images/favicon.png&url=yaolong.top/2019/08/22/我的博客/" target="_blank" class="mdui-ripple">分享到QQ</a>
+              <a href="http://connect.qq.com/widget/shareqq/index.html?site=耀龙的个人博客&title=go语言环境变量配置&summary=吃最少的经济 挨最毒的打&pics=yaolong.top/images/favicon.png&url=yaolong.top/2019/09/22/go语言环境变量配置/" target="_blank" class="mdui-ripple">分享到QQ</a>
             </li>
             <li class="mdui-menu-item">
-              <a href="https://telegram.me/share/url?url=yaolong.top/2019/08/22/我的博客/&text=我的博客" target="_blank" class="mdui-ripple">分享到Telegram</a>
+              <a href="https://telegram.me/share/url?url=yaolong.top/2019/09/22/go语言环境变量配置/&text=go语言环境变量配置" target="_blank" class="mdui-ripple">分享到Telegram</a>
             </li>
           </ul>
         
       </div>
     </header>
     <div class="mdui-card-content mdui-typo">
-      
+      <p>GOROOT就是go的安装路径</p>
+<p>在~/.bash_profile中添加下面语句:</p>
+<pre><code>GOROOT=/usr/local/go
+
+export GOROOT</code></pre><p>当然, 要执行go命令和go工具, 就要配置go的可执行文件的路径:</p>
+<p>操作如下:</p>
+<p>在~/.bash_profile中配置如下:</p>
+<pre><code>export $PATH:$GOROOT/bin</code></pre><p>如果是windows需要使用;符号分割两个路径, mac和类unix都是用:符号分割</p>
+<p>GOPATH:</p>
+<p>go install/go get和 go的工具等会用到GOPATH环境变量.</p>
+<p>GOPATH是作为编译后二进制的存放目的地和import包时的搜索路径 (其实也是你的工作目录, 你可以在src下创建你自己的go源文件, 然后开始工作)。</p>
+<p>GOPATH之下主要包含三个目录: bin、pkg、src</p>
+<p>bin目录主要存放可执行文件; pkg目录存放编译好的库文件, 主要是*.a文件; src目录下主要存放go的源文件</p>
+<p>不要把GOPATH设置成go的安装路径,</p>
+<p>可以自己在用户目录下面创建一个目录, 如gopath</p>
+<p>操作如下:</p>
+<pre><code>cd ~
+
+mkdir gopath</code></pre><p>在~/.bash_profile中添加如下语句:</p>
+<pre><code>GOPATH=/Users/username/gopath</code></pre><p>GOPATH可以是一个目录列表, go get下载的第三方库, 一般都会下载到列表的第一个目录里面</p>
+<p>需要把GOPATH中的可执行目录也配置到环境变量中, 否则你自行下载的第三方go工具就无法使用了, 操作如下:</p>
+<p>在~/bash_profile中配置,</p>
+<pre><code>export $PATH:$GOPATH/bin</code></pre><p>创建一个go项目, 并且编译运行:</p>
+<pre><code>mkdir goproject
+
+cd goproject
+
+touch hello.go</code></pre><p>在hello.go中输入:</p>
+<pre><code>package main
+
+import &quot;fmt&quot;
+
+func main() {
+
+      fmt.Println(&quot;Hello, GO !&quot;)
+
+}</code></pre><p>在项目根目录下执行go build命令来构建你的项目, 构建后会生成hello文件</p>
+<p>运行生成的文件./hello, terminal中输出: Hello, GO !</p>
+<p>当然你也可以直接运行命令go run hello.go来执行程序.</p>
+<p>如果要上述设置生效, 可以执行命令: source ~/.bash_profile, 上述所有操作均为mac系统下的操作, 如果是非mac系统, 请自行变通.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">   <span class="keyword">int</span> i;</span><br><span class="line">   <span class="keyword">int</span> c;</span><br><span class="line">   System.out.pintln(i+c);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       <blockquote class="mdui-m-t-5">
         
-        <strong>本文链接：</strong><a href="yaolong.top/2019/08/22/我的博客/">yaolong.top/2019/08/22/我的博客/</a>
+        <strong>本文链接：</strong><a href="yaolong.top/2019/09/22/go语言环境变量配置/">yaolong.top/2019/09/22/go语言环境变量配置/</a>
       </blockquote>
       
         <div class="mdui-text-center">
@@ -232,6 +273,10 @@
     </div>
     <footer class="mdui-card-actions">
       
+        <a class="mdui-ripple article_categories-link" href="/categories/编程/">编程</a>
+      
+      
+        <a class="mdui-ripple article_tags-link" href="/tags/go/">go</a>
       
     </footer>
     
@@ -267,14 +312,9 @@
 
   <nav id="paginator">
     
-      <a rel="prev" class="extend prev" href="/2019/09/22/hello-world/">
-        <button aria-label="prev" class="mdui-btn mdui-btn-raised mdui-btn-dense mdui-btn-icon mdui-color-theme-accent mdui-ripple"><i class="mdui-icon material-icons">arrow_back</i></button>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;上一篇
-      </a>
-    
     <div class="spacer"></div>
     
-      <a rel="next" class="extend next" href="/2019/08/21/游戏/">
+      <a rel="next" class="extend next" href="/2019/09/22/hello-world/">
         下一篇&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <button aria-label="next" class="mdui-btn mdui-btn-raised mdui-btn-dense mdui-btn-icon mdui-color-theme-accent mdui-ripple"><i class="mdui-icon material-icons">arrow_forward</i></button>
       </a>
