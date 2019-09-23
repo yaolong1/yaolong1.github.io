@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <meta name="renderer" content="webkit">
+
+  
+  <title>text | 耀龙的个人博客</title>
+
+  <link rel="shortcut icon" href="/images/favicon.png">
+  <link rel="alternate" href="/atom.xml" title="耀龙的个人博客">
+  <meta name="description" content="面试题">
+<meta name="keywords" content="SpringBoot">
+<meta property="og:type" content="article">
+<meta property="og:title" content="text">
+<meta property="og:url" content="yaolong.top/2019/09/23/text/index.html">
+<meta property="og:site_name" content="耀龙的个人博客">
+<meta property="og:description" content="面试题">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-09-23T12:40:24.089Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="text">
+<meta name="twitter:description" content="面试题">
+
+  <meta name="format-detection" content="telephone=no,email=no">
+  <meta name="theme-color" content="#9C27B0">
+  <meta name="description" content="面试题">
+  <meta name="keywords" content=",SpringBoot">
+
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="耀龙的个人博客">
+  <meta name="msapplication-starturl" content="yaolong.top/2019/09/23/text/">
+  <meta name="msapplication-navbutton-color" content="#9C27B0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="耀龙的个人博客">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <link rel="apple-touch-icon" href="/images/favicon.png">
+
+  
+    <meta property="article:published_time" content="Mon Sep 23 2019 16:35:50 GMT+0800">
+    <meta property="article:modified_time" content="Mon Sep 23 2019 20:40:24 GMT+0800">
+  
+
+  
+    <link rel="canonical" href="yaolong.top/2019/09/23/text/">
+  
+
+  
+  
+
+  
+  
+  
+
+  <link rel="stylesheet" href="/css/mdui.css">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="mdui-appbar-with-toolbar mdui-drawer-body-left mdui-theme-primary-indigo mdui-theme-accent-pink">
+  <script>var a=localStorage.getItem("mdui-theme-layout-dark");if(a){document.getElementsByTagName("body")[0].className+=" mdui-theme-layout-dark"};</script>
+  <header id="header" class="mdui-appbar mdui-appbar-fixed mdui-appbar-scroll-hide mdui-appbar-inset">
+  <div class="mdui-toolbar mdui-color-theme">
+    <a href="javascript:;" class="mdui-btn mdui-btn-icon" mdui-drawer="{target: '#sidebar', swipe: true}"><i class="mdui-icon material-icons">menu</i></a>
+    <a href="/" class="mdui-typo-headline">耀龙的个人博客</a>
+    <div class="mdui-toolbar-spacer"></div>
+    <a href="javascript:;" class="mdui-btn mdui-btn-icon" mdui-dialog="{target: '#search'}" mdui-tooltip="{content: '搜索'}"><i class="mdui-icon material-icons">search</i></a>
+    <a href="/atom.xml" class="mdui-btn mdui-btn-icon" mdui-tooltip="{content: 'RSS'}"><i class="mdui-icon material-icons">rss_feed</i></a>
+  </div>
+</header>
+<div class="mdui-dialog" id="search">
+  
+    <div class="search-form">
+      <input type="search" class="search-form-input" placeholder="请输入关键字">
+    </div>
+    <div class="search-result" data-resource="/search.xml"></div>
+  
+</div>
+  <aside id="sidebar" class="mdui-drawer mdui-drawer-full-height">
+  <div class="mdui-grid-tile">
+    <img src="/images/banner.png" style="height: 160px;">
+    <img src="/images/myavatar.jpg" class="avatar-animation" style="position: absolute; top: 10%; left: 24px; width: 64px; height: 64px; border: 2px solid #fff; border-radius: 50%;">
+    <div class="mdui-grid-tile-actions">
+      <div class="mdui-grid-tile-text">
+        <div class="mdui-grid-tile-title">殷跃龙</div>
+        <div class="mdui-grid-tile-subtitle"><i class="mdui-icon material-icons">art_track</i></div>
+      </div>
+      
+        <div class="mdui-grid-tile-buttons">
+          <a href="mailto:1638538651@qq.com" class="mdui-btn mdui-btn-icon" mdui-tooltip="{content: '1638538651@qq.com'}"><i class="mdui-icon material-icons">email</i></a>
+        </div>
+      
+    </div>
+  </div>
+
+  <div class="mdui-list" mdui-collapse="{accordion: true}">
+    <a href="/" class="mdui-list-item mdui-ripple">
+      <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-blue">home</i>
+      <div class="mdui-list-item-content">主页</div>
+    </a>
+    <div class="mdui-collapse-item">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-deep-orange">inbox</i>
+        <div class="mdui-list-item-content">归档</div>
+        <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
+        
+        <a class="mdui-ripple sidebar_archives-link" href="/archives/2019/09/">九月 2019<span class="mdui-ripple sidebar_archives-count">5</span></a><a class="mdui-ripple sidebar_archives-link" href="/archives/2019/08/">八月 2019<span class="mdui-ripple sidebar_archives-count">3</span></a>
+        
+      </div>
+    </div>
+    <div class="mdui-collapse-item">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-green">chrome_reader_mode</i>
+        <div class="mdui-list-item-content">分类</div>
+        <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
+        
+        <a class="mdui-ripple sidebar_archives-link" href="/categories/编程/">编程<span class="mdui-ripple sidebar_archives-count">5</span></a>
+        
+      </div>
+    </div>
+    <div class="mdui-collapse-item">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-brown">bookmark</i>
+        <div class="mdui-list-item-content">标签</div>
+        <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
+        
+        <a class="mdui-ripple sidebar_archives-link" href="/tags/SpringBoot/">SpringBoot<span class="mdui-ripple sidebar_archives-count">2</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/go/">go<span class="mdui-ripple sidebar_archives-count">2</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/java/">java<span class="mdui-ripple sidebar_archives-count">1</span></a>
+        
+      </div>
+    </div>
+    <a href="/about" class="mdui-list-item mdui-ripple">
+      <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-purple">person</i>
+      <div class="mdui-list-item-content">关于</div>
+    </a>
+  </div>
+
+  <div class="mdui-divider"></div>
+
+  <div class="mdui-list" mdui-collapse="{accordion: true}">
+    
+      <a href="/tagcloud" class="mdui-list-item mdui-ripple">标签云</a>
+    
+      <a href="/gallery" class="mdui-list-item mdui-ripple">画廊</a>
+    
+      <a href="/tv" class="mdui-list-item mdui-ripple">电视直播</a>
+    
+    <div class="mdui-collapse-item">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <div class="mdui-list-item-content">友情链接</div>
+        <i class="mdui-list-item-icon mdui-icon material-icons">link</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
+        
+          <a href="http://yaolong.top/" target="_blank" class="mdui-list-item mdui-ripple mdui-p-l-2 mdui-text-color-theme-accent" style="justify-content: center;">我的简历</a>
+        
+        
+      </div>
+    </div>
+  </div>
+</aside>
+  <main id="main" class="mdui-m-t-5 fadeIn animated">
+  <link rel="stylesheet" href="https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.css">
+  <style>#main article .mdui-card-content .center-block{display:block!important;margin-right:auto!important;margin-left:auto!important}</style>
+  <article class="mdui-card mdui-m-b-5">
+    <header class="mdui-card-media">
+      <img src="/images/random/material-8.png" style="max-height: 240px;">
+      <div class="mdui-card-media-covered">
+        <div class="mdui-card-primary">
+          <div class="mdui-card-primary-title">text</div>
+          <div class="mdui-card-primary-subtitle"><i class="iconfont">&#xe697;</i> 2019-09-23 / <i class="iconfont">&#xe601;</i> 殷跃龙 &nbsp;&nbsp; <span id="busuanzi_container_page_pv" style="display: none;"><i class="iconfont">&#xe7fd;</i> <span id="busuanzi_value_page_pv"></span></span></div>
+        </div>
+      </div>
+      <div class="mdui-card-menu">
+        
+          <button class="mdui-btn mdui-btn-icon mdui-text-color-white" mdui-menu="{target: '#qrcode', align: 'right'}"><i class="mdui-icon material-icons">devices</i></button>
+          <ul class="mdui-menu" id="qrcode">
+            
+              <li class="mdui-menu-item"><a class="mdui-text-center mdui-ripple">发送到手机</a></li>
+            
+            <li class="mdui-menu-item" disabled>
+              
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAAB50lEQVR42u3aQY6DMAwF0N7/0jPbkSqYbycVBT9WFWppHouvOPbr5xHXCwMDAwMDAwPjaxiv+Pr7/fcnHD3t/H5vDRgYGDMZ/0TbKeN9Kb3f5mvAwMCYzMhD9hOvoLoGDAwMjKNHVDeC+YYSAwMDY2/gHm0Ek2cmrwkDAwNjQwEZl6zndy6rxTEwMG7I6DUG9n6+rL+BgYHx9YzyiEMcmnmJe8HMCAYGxq0Y+WZupQ2wa4ADAwMDY30p+fjXyvEcBgbGNEZeRlZhuyL7sP2AgYExjJGXr+U/C47bem0DDAyMyYykyKw2OHNM8gowMDCmMapbvSgKF1qVSWmNgYExk9E7Sst/1Qv0bTMjGBgYN2fk0Vk9YssL16SULZwaYmBgPI6RLzQZyzgPypXtJgYGxmRGvoi8JdkL3LwlgIGBMY3RC9z8+0tH/xgYGBitAYvqnd5oRfT6MDAwhjHyojQ/yk/uLIU1BgbGMEY1gvPxiJWNZmHYAgMD49GM3ghFNXbzV1AIdwwMjGGMain76aZCM3AxMDAGMPJtXzV8k/+qhjsGBgZGb2Ci2mzolccYGBgYK4Vrcki3qxWBgYExk9GLyPVBjQuO2zAwMG7IqDYGeuVuMkBWiHgMDIwxjPteGBgYGBgYGBiXXr+yZMU6MCQTDwAAAABJRU5ErkJggg==">
+              
+            </li>
+          </ul>
+        
+        
+          <button class="mdui-btn mdui-btn-icon mdui-text-color-white" mdui-menu="{target: '#share_menu', align: 'right'}"><i class="mdui-icon material-icons">share</i></button>
+          <ul class="mdui-menu" id="share_menu">
+            <li class="mdui-menu-item">
+              <a href="http://service.weibo.com/share/share.php?appkey=&title=text&url=yaolong.top/2019/09/23/text/&pic=yaolong.top/images/favicon.png&searchPic=false&style=simple" target="_blank" class="mdui-ripple">分享到微博</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="https://twitter.com/intent/tweet?text=text&url=yaolong.top/2019/09/23/text/&via=殷跃龙" target="_blank" class="mdui-ripple">分享到Twitter</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="https://www.facebook.com/sharer/sharer.php?u=yaolong.top/2019/09/23/text/" target="_blank" class="mdui-ripple">分享到Facebook</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="https://plus.google.com/share?url=yaolong.top/2019/09/23/text/" target="_blank" class="mdui-ripple">分享到Google+</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="https://www.linkedin.com/shareArticle?mini=true&url=yaolong.top/2019/09/23/text/&title=text" target="_blank" class="mdui-ripple">分享到LinkedIn</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="http://connect.qq.com/widget/shareqq/index.html?site=耀龙的个人博客&title=text&summary=吃最少的经济 挨最毒的打&pics=yaolong.top/images/favicon.png&url=yaolong.top/2019/09/23/text/" target="_blank" class="mdui-ripple">分享到QQ</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="https://telegram.me/share/url?url=yaolong.top/2019/09/23/text/&text=text" target="_blank" class="mdui-ripple">分享到Telegram</a>
+            </li>
+          </ul>
+        
+      </div>
+    </header>
+    <div class="mdui-card-content mdui-typo">
+      <h1 id="springboot项目基础面试题"><a href="#springboot项目基础面试题" class="headerlink" title="springboot项目基础面试题"></a>springboot项目基础面试题</h1><hr>
+<h3 id="1、什么是-Spring-Boot？"><a href="#1、什么是-Spring-Boot？" class="headerlink" title="1、什么是 Spring Boot？"></a>1、什么是 Spring Boot？</h3><p>Spring Boot 是 Spring 开源组织下的子项目，是 Spring 组件一站式解决方案，主要是简化了使用 Spring 的难度，简省了繁重的配置，提供了各种启动器，开发者能快速上手。</p>
+<hr>
+<h3 id="2、springboot与spring的区别"><a href="#2、springboot与spring的区别" class="headerlink" title="2、springboot与spring的区别."></a>2、springboot与spring的区别.</h3><p>引用自官方说法: java在集成spring等框架需要作出大量的配置,开发效率低,繁琐.所以官方提出 spring boot的核心思想:习惯优于配置.可以快速创建开发基于spring框架的项目.或者支持可以不用或很少的spring配置即可</p>
+<hr>
+<h3 id="3、springboot的核心功能与使用优点"><a href="#3、springboot的核心功能与使用优点" class="headerlink" title="3、springboot的核心功能与使用优点."></a>3、springboot的核心功能与使用优点.</h3><p>核心功能:<br></p>
+<hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">springboot项目为独立运行的spring项目,java -jar xx.jar即可运行.</span><br><span class="line">内嵌servlet容器(可以选择内嵌: tomcat ,jetty等服务器.).</span><br><span class="line">提供了starter的pom 配置 简化了 maven的配置.&lt;br/&gt;</span><br><span class="line">自动配置spring容器中的bean.当不满足实际开发场景,可自定义bean的自动化配置.</span><br><span class="line">准生产的应用监控(基于: ssh , http , telnet 对服务器运行的项目进行监控.).</span><br><span class="line">springboot无需做出xml配置,也不是通过代码生成来实现(通过条件注解.).</span><br></pre></td></tr></table></figure>
+
+<p>使用优点:<br></p>
+<hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">快速搭建项目,</span><br><span class="line">与主流框架集成无需配置集成.</span><br><span class="line">内嵌HTTP服务容器(tomcat ,jetty).</span><br><span class="line">具有应用监控.</span><br><span class="line">开发部署方便,后期与云计算平台集成方便(docket)</span><br><span class="line">独立运行</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="4、Spring-Boot-的配置文件有哪几种格式？它们有什么区别？"><a href="#4、Spring-Boot-的配置文件有哪几种格式？它们有什么区别？" class="headerlink" title="4、Spring Boot 的配置文件有哪几种格式？它们有什么区别？"></a>4、Spring Boot 的配置文件有哪几种格式？它们有什么区别？</h3><p>格式主要分为两种： application.properties application.yml </p>
+<p>区别：</p>
+<pre><code>.properties和.yml是配置文件中的两种不同的后缀名；
+.yml拥有天然的树状结构；
+在properties文件中是以”.”进行分割的， 在.yml中是用”:”进行分割；
+.yml的数据格式是K-V格式（和json很像），并且通过”:”进行赋值；
+在.yml中缩进一定不能使用TAB，否则会报很奇怪的错误；
+每个k的冒号后面一定都要加一个空格；
+.yml比.properties对中文对支持更友好。</code></pre><h3 id="5、springboot核心启动类的作用、组成"><a href="#5、springboot核心启动类的作用、组成" class="headerlink" title="5、springboot核心启动类的作用、组成"></a>5、springboot核心启动类的作用、组成</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@SpringBootApplication</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">      SpringApplication.run(Test.class,args);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<p>该类是spring的核心类，主要启动加载各种组件<br><br>@SpringBootApplication是核心注解，用于标识声明一个springboot框架容器.<br><br><font color="red">@SpringBootApplication</font>主要包含以下三个注解：<br><br><font color="red">@SpringBootConfiguration:</font>组合了 @Configuration 注解，实现配置文件的功能。<br><br><font color="red">@EnableAutoConfiguration:</font>打开自动配置的功能，也可以关闭某个自动配置的选项，如关闭数据源自动配置功能：</p>
+<p> <code>@SpringBootApplication(exclude = { DataSourceAutoConfiguration.class })。</code></p>
+<p><font color="red">@ComponentScan：</font>Spring组件扫描。</p>
+<hr>
+<h3 id="6、Spring-Boot-的配置文件的作用？"><a href="#6、Spring-Boot-的配置文件的作用？" class="headerlink" title="6、Spring Boot 的配置文件的作用？"></a>6、Spring Boot 的配置文件的作用？</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">bootstrap.properties/bootstrap.yml //用于配置无需重写的系统常量,例如springcloud项目用到的config配置中心的连接属性等.加载优先级高于application.properties.</span><br><span class="line">application.properties/application.yml //用于配置重写springboot项目的默认框架属性,例如:重写tomcat,springmvc,日志框架等默认属性.主要提供给spring框架加载使用.</span><br><span class="line">注: properties后缀名与yml后缀名配置文件二选一即可. 两种不同格式的配置文件而已.</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="7、开启-Spring-Boot-特性有哪几种方式？"><a href="#7、开启-Spring-Boot-特性有哪几种方式？" class="headerlink" title="7、开启 Spring Boot 特性有哪几种方式？"></a>7、开启 Spring Boot 特性有哪几种方式？</h3><p>1）继承spring-boot-starter-parent项目</p>
+<p>2）导入spring-boot-dependencies项目依赖</p>
+<hr>
+<h3 id="8、Spring-Boot-需要独立的容器运行吗？"><a href="#8、Spring-Boot-需要独立的容器运行吗？" class="headerlink" title="8、Spring Boot 需要独立的容器运行吗？"></a>8、Spring Boot 需要独立的容器运行吗？</h3><p>不需要！springboot内置HTTP服务器(tomcat,jetty)</p>
+<hr>
+<h3 id="9、运行-Spring-Boot-有哪几种方式？"><a href="#9、运行-Spring-Boot-有哪几种方式？" class="headerlink" title="9、运行 Spring Boot 有哪几种方式？"></a>9、运行 Spring Boot 有哪几种方式？</h3><p>1）打包用命令运行或者容器里面运行<br>2）用Maven或者Gradle 插件运行<br>3）直接执行main函数运行</p>
+<hr>
+<h3 id="10、开启SpringBoot特性的几种方式是哪些？"><a href="#10、开启SpringBoot特性的几种方式是哪些？" class="headerlink" title="10、开启SpringBoot特性的几种方式是哪些？"></a>10、开启SpringBoot特性的几种方式是哪些？</h3><p>1)继承spring-boot-starter-parent项目<br>2)导入spring-boot-dependencies项目依赖 </p>
+<hr>
+<h3 id="11、Spring-Boot-自动配置原理是什么？"><a href="#11、Spring-Boot-自动配置原理是什么？" class="headerlink" title="11、Spring Boot 自动配置原理是什么？"></a>11、Spring Boot 自动配置原理是什么？</h3><p>注解<font color="red">@EnableAutoConfiguration</font>,<font color="red">@Configuration</font>，<font color="red">@ConditionalOnClass</font>就是自动配置的核心，首先它得是一个配置文件，其次根据类路径下是否有这个类去自动配置。  </p>
+<hr>
+<h3 id="12、Spring-Boot-的目录结构是怎样的？"><a href="#12、Spring-Boot-的目录结构是怎样的？" class="headerlink" title="12、Spring Boot 的目录结构是怎样的？"></a>12、Spring Boot 的目录结构是怎样的？</h3><p>结构如下：</p>
+<pre><code class="text">+- javastack
+   +- MyApplication.java //启动类
+   |
+   +- customer
+   |   +- Customer.java //实体
+   |   +- CustomerController.java // 表现层
+   |   +- CustomerService.java //业务逻辑层
+   |   +- CustomerRepository.java  // 数据访问层
+   |
+   +- order
+       +- Order.java
+       +- OrderController.java
+       +- OrderService.java
+       +- OrderRepository.java</code></pre>
+<h3 id="13、你如何理解-Spring-Boot-中的-Starters？"><a href="#13、你如何理解-Spring-Boot-中的-Starters？" class="headerlink" title="13、你如何理解 Spring Boot 中的 Starters？"></a>13、你如何理解 Spring Boot 中的 Starters？</h3><p>Starters可以理解为启动器，它包含了一系列可以集成到应用里面的依赖包，你可以一站式集成 Spring 及其他技术，而不需要到处找示例代码和依赖包。如你想使用 Spring JPA 访问数据库，只要加入 spring-boot-starter-data-jpa 启动器依赖就能使用了。 </p>
+<hr>
+<h3 id="14、如何在-Spring-Boot-启动的时候运行一些特定的代码？"><a href="#14、如何在-Spring-Boot-启动的时候运行一些特定的代码？" class="headerlink" title="14、如何在 Spring Boot 启动的时候运行一些特定的代码？"></a>14、如何在 Spring Boot 启动的时候运行一些特定的代码？</h3><p>可以实现接口 ApplicationRunner 或者 CommandLineRunner，这两个接口实现方式一样，它们都只提供了一个 run 方法</p>
+<hr>
+<h3 id="15、Spring-Boot-有哪几种读取配置的方式？"><a href="#15、Spring-Boot-有哪几种读取配置的方式？" class="headerlink" title="15、Spring Boot 有哪几种读取配置的方式？"></a>15、Spring Boot 有哪几种读取配置的方式？</h3><p>Spring Boot 可以通过 @PropertySource,@Value,@Environment, @ConfigurationProperties 来绑定变量 </p>
+<hr>
+<h3 id="16、Spring-Boot-支持哪些日志框架？推荐和默认的日志框架是哪个？"><a href="#16、Spring-Boot-支持哪些日志框架？推荐和默认的日志框架是哪个？" class="headerlink" title="16、Spring Boot 支持哪些日志框架？推荐和默认的日志框架是哪个？"></a>16、Spring Boot 支持哪些日志框架？推荐和默认的日志框架是哪个？</h3><p>Spring Boot 支持 Java Util Logging, Log4j2, Lockback 作为日志框架，如果你使用 Starters 启动器，Spring Boot 将使用 Logback 作为默认日志框架 </p>
+<hr>
+<h3 id="17、SpringBoot-实现热部署有哪几种方式？"><a href="#17、SpringBoot-实现热部署有哪几种方式？" class="headerlink" title="17、SpringBoot 实现热部署有哪几种方式？"></a>17、SpringBoot 实现热部署有哪几种方式？</h3><p>主要有两种方式：</p>
+<p>Spring Loaded<br><br>Spring-boot-devtools </p>
+<hr>
+<h3 id="18、Spring-Boot-可以兼容老-Spring-项目吗，如何做？"><a href="#18、Spring-Boot-可以兼容老-Spring-项目吗，如何做？" class="headerlink" title="18、Spring Boot 可以兼容老 Spring 项目吗，如何做？"></a>18、Spring Boot 可以兼容老 Spring 项目吗，如何做？</h3><p>可以兼容，使用 @ImportResource 注解导入老 Spring 项目配置文件。</p>
+<h3 id="19、Spring-Boot-如何定义多套不同环境配置？"><a href="#19、Spring-Boot-如何定义多套不同环境配置？" class="headerlink" title="19、Spring Boot 如何定义多套不同环境配置？"></a>19、Spring Boot 如何定义多套不同环境配置？</h3><p>提供多套配置文件，如：</p>
+<pre><code>application.properties
+
+application-dev.properties
+
+application-test.properties
+
+application-prod.properties </code></pre><h3 id="20、Spring-Boot-2-X-有什么新特性？与-1-X-有什么区别？"><a href="#20、Spring-Boot-2-X-有什么新特性？与-1-X-有什么区别？" class="headerlink" title="20、Spring Boot 2.X 有什么新特性？与 1.X 有什么区别？"></a>20、Spring Boot 2.X 有什么新特性？与 1.X 有什么区别？</h3><pre><code>1） 配置变更
+
+2）JDK 版本升级
+
+3) 第三方类库升级
+
+4) 响应式 Spring 编程支持
+
+5) HTTP/2 支持
+
+6) 配置属性绑定</code></pre><hr>
+
+      <blockquote class="mdui-m-t-5">
+        
+        <strong>本文链接：</strong><a href="yaolong.top/2019/09/23/text/">yaolong.top/2019/09/23/text/</a>
+      </blockquote>
+      
+        <div class="mdui-text-center">
+          <button class="mdui-fab mdui-color-deep-orange mdui-text-color-white mdui-ripple" mdui-dialog="{target: '#donate'}" mdui-tooltip="{content: '打赏', position: 'top'}"><i class="mdui-icon material-icons">thumb_up</i></button>
+        </div>
+      
+    </div>
+    <footer class="mdui-card-actions">
+      
+        <a class="mdui-ripple article_categories-link" href="/categories/编程/">编程</a>
+      
+      
+        <a class="mdui-ripple article_tags-link" href="/tags/SpringBoot/">SpringBoot</a>
+      
+    </footer>
+    
+      <div class="mdui-dialog" id="donate">
+        <div class="mdui-tab mdui-tab-centered" mdui-tab>
+          
+            <a href="#donate-0" class="mdui-ripple">支付宝</a>
+          
+            <a href="#donate-1" class="mdui-ripple">微信支付</a>
+          
+        </div>
+        
+        
+          <div id="donate-0" class="mdui-p-a-2 mdui-typo mdui-text-center">
+            
+              <img src="/images/alipay.jpg" style="width: 300px;">
+            
+          </div>
+        
+          <div id="donate-1" class="mdui-p-a-2 mdui-typo mdui-text-center">
+            
+              <img src="/images/wechat.jpg" style="width: 300px;">
+            
+          </div>
+        
+      </div>
+    
+  </article>
+  <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+  <script>$("#main article .mdui-card-content img.fancybox").on("click",function(e){$.fancybox.open({src:$(this).attr("src")});});</script>
+
+
+  <nav id="paginator">
+    
+    <div class="spacer"></div>
+    
+      <a rel="next" class="extend next" href="/2019/09/23/springboot20道面试题/">
+        下一篇&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button aria-label="next" class="mdui-btn mdui-btn-raised mdui-btn-dense mdui-btn-icon mdui-color-theme-accent mdui-ripple"><i class="mdui-icon material-icons">arrow_forward</i></button>
+      </a>
+    
+  </nav>
+
+
+  <div id="comment" class="mdui-m-t-5">
+    <div class="vcomment"></div>
+<script src="//cdnjs.loli.net/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+  var GUEST_INFO = ['nick', 'mail', 'link'];
+  var guest_info = 'nick,mail,link'.split(',').filter(function (item) {
+    return GUEST_INFO.indexOf(item) > -1;
+  });
+  var notify = 'false' === 'true';
+  var verify = 'false' === 'true';
+  new Valine({
+    av: AV,
+    el: '.vcomment',
+    notify: notify,
+    verify: verify,
+    appId: "qMIo0vb5e8uDx7mfvb4jhnfD-gzGzoHsz",
+    appKey: "Q2GIKfbjU0JXIbJCi2dHecAs",
+    placeholder: "ヾﾉ≧∀≦)o来啊，快活啊!欢迎评论哟",
+    pageSize: '10',
+    avatar: 'mm',
+    lang: '',
+    guest_info: guest_info
+  });
+</script>
+  </div>
+
+
+</main>
+  <footer id="footer" class="mdui-m-t-5 mdui-p-y-3 mdui-color-theme">
+  <div class="mdui-p-y-0 mdui-text-center">
+    
+    
+    
+    
+    
+    
+    
+      <a href="https://github.com/yaolong1" target="_blank"><i class="mdui-p-a-1 mdui-icon iconfont mdui-text-color-theme-a100">&#xe7ab;</i></a>
+    
+    
+    
+    
+    
+      <a href="tencent://message/?uin=1638538651&Menu=yes" target="_blank"><i class="mdui-p-a-1 mdui-icon iconfont mdui-text-color-theme-a100">&#xe651;</i></a>
+    
+    
+  </div>
+  <div class="mdui-p-y-1 mdui-text-center">
+    Copyright &copy; 2019 - 2019 殷跃龙<br>
+    Powered by <a href="https://hexo.io/" target="_blank" class="mdui-text-color-theme-accent">Hexo</a>
+    <br>
+      <span id="busuanzi_container_site_pv" style="display: none;"><i class="iconfont">&#xe7fd;</i> <span id="busuanzi_value_site_pv"></span></span> &nbsp;&nbsp;
+      <span id="busuanzi_container_site_uv" style="display: none;"><i class="iconfont">&#xe601;</i> <span id="busuanzi_value_site_uv"></span></span>
+    
+  </div>
+</footer>
+  <button id="gotop" class="mdui-fab mdui-fab-fixed mdui-fab-hide mdui-ripple mdui-color-theme-accent"><i class="mdui-icon material-icons">arrow_upward</i></button>
+  <script async src="http://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script src="/js/mdui.js"></script>
+<script src="/js/script.js"></script>
+</body>
+</html>
