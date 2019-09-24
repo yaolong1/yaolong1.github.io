@@ -8,25 +8,27 @@
   <meta name="renderer" content="webkit">
 
   
-  <title>基于Python+Opencv+Tensorflow-gpu+OpenPose的骨é人体骨骼识别 | 耀龙的个人博客</title>
+  <title>python+tensorflow-gpu+openpose实现人体骨骼识别 | 耀龙的个人博客</title>
 
   <link rel="shortcut icon" href="/images/favicon.png">
   <link rel="alternate" href="/atom.xml" title="耀龙的个人博客">
   <meta name="description" content="骨骼识别">
 <meta name="keywords" content="python">
 <meta property="og:type" content="article">
-<meta property="og:title" content="基于Python+Opencv+Tensorflow-gpu+OpenPose的骨é人体骨骼识别">
-<meta property="og:url" content="yaolong.top/2019/09/24/基于Python-Opencv-Tensorflow-gpu-OpenPose的骨e人体骨骼识别/index.html">
+<meta property="og:title" content="python+tensorflow-gpu+openpose实现人体骨骼识别">
+<meta property="og:url" content="yaolong.top/2019/09/24/python-tensorflow-gpu-openpose/index.html">
 <meta property="og:site_name" content="耀龙的个人博客">
 <meta property="og:description" content="骨骼识别">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="yaolong.top/2019/09/24/基于Python-Opencv-Tensorflow-gpu-OpenPose的骨e人体骨骼识别/%E5%9F%BA%E4%BA%8EPython-Opencv-Tensorflow-gpu-OpenPose%E7%9A%84%E9%AA%A8e%E4%BA%BA%E4%BD%93%E9%AA%A8%E9%AA%BC%E8%AF%86%E5%88%AB/demo_mulu.png">
-<meta property="og:image" content="yaolong.top/2019/09/24/基于Python-Opencv-Tensorflow-gpu-OpenPose的骨e人体骨骼识别/%E5%9F%BA%E4%BA%8EPython-Opencv-Tensorflow-gpu-OpenPose%E7%9A%84%E9%AA%A8e%E4%BA%BA%E4%BD%93%E9%AA%A8%E9%AA%BC%E8%AF%86%E5%88%AB/succese.png">
-<meta property="og:updated_time" content="2019-09-24T14:20:57.058Z">
+<meta property="og:image" content="yaolong.top/2019/09/24/python-tensorflow-gpu-openpose/python-tensorflow-gpu-openpose/demo_mulu.png">
+<meta property="og:image" content="/2019/09/24/python-tensorflow-gpu-openpose/demo_mulu.png">
+<meta property="og:image" content="yaolong.top/2019/09/24/python-tensorflow-gpu-openpose/python-tensorflow-gpu-openpose/succese.png">
+<meta property="og:image" content="/2019/09/24/python-tensorflow-gpu-openpose/succese.png">
+<meta property="og:updated_time" content="2019-09-24T15:02:41.173Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="基于Python+Opencv+Tensorflow-gpu+OpenPose的骨é人体骨骼识别">
+<meta name="twitter:title" content="python+tensorflow-gpu+openpose实现人体骨骼识别">
 <meta name="twitter:description" content="骨骼识别">
-<meta name="twitter:image" content="yaolong.top/2019/09/24/基于Python-Opencv-Tensorflow-gpu-OpenPose的骨e人体骨骼识别/%E5%9F%BA%E4%BA%8EPython-Opencv-Tensorflow-gpu-OpenPose%E7%9A%84%E9%AA%A8e%E4%BA%BA%E4%BD%93%E9%AA%A8%E9%AA%BC%E8%AF%86%E5%88%AB/demo_mulu.png">
+<meta name="twitter:image" content="yaolong.top/2019/09/24/python-tensorflow-gpu-openpose/python-tensorflow-gpu-openpose/demo_mulu.png">
 
   <meta name="format-detection" content="telephone=no,email=no">
   <meta name="theme-color" content="#9C27B0">
@@ -35,7 +37,7 @@
 
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="application-name" content="耀龙的个人博客">
-  <meta name="msapplication-starturl" content="yaolong.top/2019/09/24/基于Python-Opencv-Tensorflow-gpu-OpenPose的骨e人体骨骼识别/">
+  <meta name="msapplication-starturl" content="yaolong.top/2019/09/24/python-tensorflow-gpu-openpose/">
   <meta name="msapplication-navbutton-color" content="#9C27B0">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-title" content="耀龙的个人博客">
@@ -43,12 +45,12 @@
   <link rel="apple-touch-icon" href="/images/favicon.png">
 
   
-    <meta property="article:published_time" content="Tue Sep 24 2019 17:43:29 GMT+0800">
-    <meta property="article:modified_time" content="Tue Sep 24 2019 22:20:57 GMT+0800">
+    <meta property="article:published_time" content="Tue Sep 24 2019 22:36:59 GMT+0800">
+    <meta property="article:modified_time" content="Tue Sep 24 2019 23:02:41 GMT+0800">
   
 
   
-    <link rel="canonical" href="yaolong.top/2019/09/24/基于Python-Opencv-Tensorflow-gpu-OpenPose的骨e人体骨骼识别/">
+    <link rel="canonical" href="yaolong.top/2019/09/24/python-tensorflow-gpu-openpose/">
   
 
   
@@ -173,10 +175,10 @@
   <style>#main article .mdui-card-content .center-block{display:block!important;margin-right:auto!important;margin-left:auto!important}</style>
   <article class="mdui-card mdui-m-b-5">
     <header class="mdui-card-media">
-      <img src="/images/random/material-16.png" style="max-height: 240px;">
+      <img src="/images/random/material-6.png" style="max-height: 240px;">
       <div class="mdui-card-media-covered">
         <div class="mdui-card-primary">
-          <div class="mdui-card-primary-title">基于Python+Opencv+Tensorflow-gpu+OpenPose的骨é人体骨骼识别</div>
+          <div class="mdui-card-primary-title">python+tensorflow-gpu+openpose实现人体骨骼识别</div>
           <div class="mdui-card-primary-subtitle"><i class="iconfont">&#xe697;</i> 2019-09-24 / <i class="iconfont">&#xe601;</i> 殷跃龙 &nbsp;&nbsp; <span id="busuanzi_container_page_pv" style="display: none;"><i class="iconfont">&#xe7fd;</i> <span id="busuanzi_value_page_pv"></span></span></div>
         </div>
       </div>
@@ -189,7 +191,7 @@
             
             <li class="mdui-menu-item" disabled>
               
-                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQ4AAAEOCAAAAABd2qZ5AAADi0lEQVR42u3aQW7jMBAEQP//08l1gYXsbg4pK0DpFMSKRFYO4xn268f1z/VCgAMHDhw4cODAgQPHgzle8XX5uIs7r/5q8pYPG1vaCw4cOHDgOMGRvCZ//YQp3/DkCThw4MCB4x6O+Qbeo7TlNtn81TrzveDAgQMHjudwXD0hf9p7rPc/JyvBgQMHDhx/hSNf7oQyL6g4cODAgeOZHG0ByweIyTBxcs/XZqU4cODAgWMcaHj+z7fmO3DgwIEDx38c8ysph20AYlLy6/XjwIEDB46tHMngLw83zBu2/Khp0sjhwIEDB45zHO3Ib9dgLimo+TNzsqiFw4EDBw4cY442ppBjtdteI1sbaOLAgQMHjm9x5EPASVRu8ldJ27mt0OLAgQMHjqUWbq09m8Sj8w1/YTiIAwcOHDg2ceQBgrUS25K1rNHKceDAgQPHAY68+UmCbpOAQrLtpLhu62hx4MCBA0fJMQmo5S1WvuG2WLZwHwotDhw4cOA4zLErcNA+f1cLV0flcODAgQPHmCMve3npKpay1IYl7yreggMHDhw4DnAkG0s+bRuttri27WL0b8OBAwcOHFs5koXmBbjFbY+g8hKbA+HAgQMHjnMcu5qrefigPRLL204cOHDgwHGaox2x5eG5Ne6157SRPhw4cODAcQ9HHk3Y1Uoln+5qLy9BceDAgQPHVo4kKNA2VC1TO9Sbt504cODAgeM0R/6bfEi3VlDXghH5VwEcOHDgwHGaow0lJAvKG602hNd+OcCBAwcOHN/lmG9ybcN5rK3dfPQEHDhw4MCxlWPePuWftq3dXjgcOHDgwHEnRx53a+/Mm7F5iCEKxr2PyuHAgQMHjjHHWmuUg7YHRe1hVX74dPlGHDhw4MCxlSNvn9pwQzuqa0MJi8E4HDhw4MBxmCMZwOXLWruzDSu0pb0+hcOBAwcOHAOOpFy197SBgzZOsdbOLbZwOHDgwIGj5KiP/+MGL0EpDofio6/8UAoHDhw4cJzg2HuQs+sIKnnyWlQCBw4cOHDcw5EX17UFTUaKeweOOHDgwIHjTo6kmK0V1LUxYr629isCDhw4cOB4DkdeSts4Qn7U1AYyPvxrceDAgQPHVznWSmk7Rsy3mtw/ynfgwIEDB44Bx2RUlzd1LdD84OpD64gDBw4cOA5w5K3UvLlaO9Bq7ykOqHDgwIEDx1YOFw4cOHDgwIEDBw4cOB52/QLHq8kqvwRPdwAAAABJRU5ErkJggg==">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACY0lEQVR42u3aQW7DMAwEQP//0+0DirpL0mKTYHQKCkPW+CCqK15fHz0uPDw8PDw8PDy8F+Nd8YimDp78+cxv7+qtDQ8PD2+H11t0sqBk5p8zjD4WHh4e3iLvfoOubuv3z99v/b214eHh4b0L7/6ZpFQk78LDw8N7d14SDSQl5LeZ8fDw8N6Fl/zDf7+gajG4f/s/ZC14eHh4Ma+33e/8Xr3fw8PDwwt45Zam2zKQF4x86x81XeHh4eEd4OUbcXLU7gUNSWNB3pSAh4eHd5o3DwgmzQFJRFtuVsDDw8Nb4SWkXjNB0oxVPab/Ua7w8PDwDvOqi05KSK+B4Kk4Aw8PD+80rxoHVD9E7+jco+Lh4eHt8PJF58fiazAeKDx4eHh4h3nVtoD5VVlv5kIIgoeHh3eYV31xORp4CPBAjIuHh4f3KK96tZ8XgHlAXC45eHh4eId5veurasg7iS3yQAQPDw9vh1cNVath7iSMyD8iHh4e3iYvORAn1/9JgelFFaMwAg8PD+8wLz80947X+V96sTIeHh7eDi/f6PO4No+Dy0FDUmzw8PDwVnjzMLca4FbfPspa8PDw8I7x8qPt/KP0ylL0yfDw8PDWeUuLiA/lDxcGPDw8vDGvOpJ20slxPGH/UWzw8PDwDvOuePSuzapH6l7MgYeHh7fPmy8938pzXu9Yj4eHh7fJyzfoartq79qs2mqAh4eH98q8vFEgCS+emhkPDw/vXXi9VqpeRBsFzXh4eHiLvPxwXC0Y1QCiWgzw8PDw9nm9VqfqM0kZqF6e4eHh4e3zPm/g4eHh4eHh4eG9wPgGA8abp9G0RqkAAAAASUVORK5CYII=">
               
             </li>
           </ul>
@@ -198,25 +200,25 @@
           <button class="mdui-btn mdui-btn-icon mdui-text-color-white" mdui-menu="{target: '#share_menu', align: 'right'}"><i class="mdui-icon material-icons">share</i></button>
           <ul class="mdui-menu" id="share_menu">
             <li class="mdui-menu-item">
-              <a href="http://service.weibo.com/share/share.php?appkey=&title=基于Python+Opencv+Tensorflow-gpu+OpenPose的骨é人体骨骼识别&url=yaolong.top/2019/09/24/基于Python-Opencv-Tensorflow-gpu-OpenPose的骨e人体骨骼识别/&pic=yaolong.top/images/favicon.png&searchPic=false&style=simple" target="_blank" class="mdui-ripple">分享到微博</a>
+              <a href="http://service.weibo.com/share/share.php?appkey=&title=python+tensorflow-gpu+openpose实现人体骨骼识别&url=yaolong.top/2019/09/24/python-tensorflow-gpu-openpose/&pic=yaolong.top/images/favicon.png&searchPic=false&style=simple" target="_blank" class="mdui-ripple">分享到微博</a>
             </li>
             <li class="mdui-menu-item">
-              <a href="https://twitter.com/intent/tweet?text=基于Python+Opencv+Tensorflow-gpu+OpenPose的骨é人体骨骼识别&url=yaolong.top/2019/09/24/基于Python-Opencv-Tensorflow-gpu-OpenPose的骨e人体骨骼识别/&via=殷跃龙" target="_blank" class="mdui-ripple">分享到Twitter</a>
+              <a href="https://twitter.com/intent/tweet?text=python+tensorflow-gpu+openpose实现人体骨骼识别&url=yaolong.top/2019/09/24/python-tensorflow-gpu-openpose/&via=殷跃龙" target="_blank" class="mdui-ripple">分享到Twitter</a>
             </li>
             <li class="mdui-menu-item">
-              <a href="https://www.facebook.com/sharer/sharer.php?u=yaolong.top/2019/09/24/基于Python-Opencv-Tensorflow-gpu-OpenPose的骨e人体骨骼识别/" target="_blank" class="mdui-ripple">分享到Facebook</a>
+              <a href="https://www.facebook.com/sharer/sharer.php?u=yaolong.top/2019/09/24/python-tensorflow-gpu-openpose/" target="_blank" class="mdui-ripple">分享到Facebook</a>
             </li>
             <li class="mdui-menu-item">
-              <a href="https://plus.google.com/share?url=yaolong.top/2019/09/24/基于Python-Opencv-Tensorflow-gpu-OpenPose的骨e人体骨骼识别/" target="_blank" class="mdui-ripple">分享到Google+</a>
+              <a href="https://plus.google.com/share?url=yaolong.top/2019/09/24/python-tensorflow-gpu-openpose/" target="_blank" class="mdui-ripple">分享到Google+</a>
             </li>
             <li class="mdui-menu-item">
-              <a href="https://www.linkedin.com/shareArticle?mini=true&url=yaolong.top/2019/09/24/基于Python-Opencv-Tensorflow-gpu-OpenPose的骨e人体骨骼识别/&title=基于Python+Opencv+Tensorflow-gpu+OpenPose的骨é人体骨骼识别" target="_blank" class="mdui-ripple">分享到LinkedIn</a>
+              <a href="https://www.linkedin.com/shareArticle?mini=true&url=yaolong.top/2019/09/24/python-tensorflow-gpu-openpose/&title=python+tensorflow-gpu+openpose实现人体骨骼识别" target="_blank" class="mdui-ripple">分享到LinkedIn</a>
             </li>
             <li class="mdui-menu-item">
-              <a href="http://connect.qq.com/widget/shareqq/index.html?site=耀龙的个人博客&title=基于Python+Opencv+Tensorflow-gpu+OpenPose的骨é人体骨骼识别&summary=吃最少的经济 挨最毒的打&pics=yaolong.top/images/favicon.png&url=yaolong.top/2019/09/24/基于Python-Opencv-Tensorflow-gpu-OpenPose的骨e人体骨骼识别/" target="_blank" class="mdui-ripple">分享到QQ</a>
+              <a href="http://connect.qq.com/widget/shareqq/index.html?site=耀龙的个人博客&title=python+tensorflow-gpu+openpose实现人体骨骼识别&summary=吃最少的经济 挨最毒的打&pics=yaolong.top/images/favicon.png&url=yaolong.top/2019/09/24/python-tensorflow-gpu-openpose/" target="_blank" class="mdui-ripple">分享到QQ</a>
             </li>
             <li class="mdui-menu-item">
-              <a href="https://telegram.me/share/url?url=yaolong.top/2019/09/24/基于Python-Opencv-Tensorflow-gpu-OpenPose的骨e人体骨骼识别/&text=基于Python+Opencv+Tensorflow-gpu+OpenPose的骨é人体骨骼识别" target="_blank" class="mdui-ripple">分享到Telegram</a>
+              <a href="https://telegram.me/share/url?url=yaolong.top/2019/09/24/python-tensorflow-gpu-openpose/&text=python+tensorflow-gpu+openpose实现人体骨骼识别" target="_blank" class="mdui-ripple">分享到Telegram</a>
             </li>
           </ul>
         
@@ -230,7 +232,9 @@
 </ul>
 <p>以上这几个环境直接 pip install xxx 下载就行<br></p>
 <hr>
-<p>1、首先从<a href="https://github.com/yaolong1/tf-pose-estimation" target="_blank" rel="noopener">仓库中</a>下载demo<br><br>下载完成后demo项目结构如下<br><br><img src="%E5%9F%BA%E4%BA%8EPython-Opencv-Tensorflow-gpu-OpenPose%E7%9A%84%E9%AA%A8e%E4%BA%BA%E4%BD%93%E9%AA%A8%E9%AA%BC%E8%AF%86%E5%88%AB/demo_mulu.png" alt></p>
+<p>1、首先从<a href="https://github.com/yaolong1/tf-pose-estimation" target="_blank" rel="noopener">仓库中</a>下载demo<br><br>下载完成后demo项目结构如下<br></p>
+<p><img src="python-tensorflow-gpu-openpose/demo_mulu.png" alt><br></p>
+<img src="/2019/09/24/python-tensorflow-gpu-openpose/demo_mulu.png" title="This is an example image">
 <p>进入tf-pose-estimation</p>
 <pre><code>cd tf-pose-estimation\</code></pre><hr>
 <p> 下载依赖库</p>
@@ -247,14 +251,14 @@ swig -python -c++ pafprocess.i &amp;&amp; python setup.py build_ext --inplace</c
 <p>添加环境变量到path， 比如： D:安装路径\swigwin-3.0.12 <br></p>
 <pre><code>swig --help #测试一下是否生效</code></pre><hr>
 <pre><code>swig -python -c++ pafprocess.i &amp;&amp; python setup.py build_ext --inplace #再次执行此语句</code></pre><p>执行 python run_webcam.py文件 </p>
-<pre><code>python run_webcam.py --model=mobilenet_thin --resize=432x368 --camera=0</code></pre><h3 id="运行成功！！"><a href="#运行成功！！" class="headerlink" title="运行成功！！"></a>运行成功！！</h3><p>   <img src="%E5%9F%BA%E4%BA%8EPython-Opencv-Tensorflow-gpu-OpenPose%E7%9A%84%E9%AA%A8e%E4%BA%BA%E4%BD%93%E9%AA%A8%E9%AA%BC%E8%AF%86%E5%88%AB/succese.png" alt></p>
+<pre><code>python run_webcam.py --model=mobilenet_thin --resize=432x368 --camera=0</code></pre><h3 id="运行成功！！"><a href="#运行成功！！" class="headerlink" title="运行成功！！"></a>运行成功！！</h3><p>   <img src="python-tensorflow-gpu-openpose/succese.png" alt><br><br>   <img src="/2019/09/24/python-tensorflow-gpu-openpose/succese.png" title="This is an example image"></p>
 <p> <font color="red">在此过程中可能会遇到一些网速较慢而无法下载完成的库，可以根据报错提示在码云仓库里面下在没安装好的库！<font></font></font></p>
 <p> 有问题的联系QQ：<font color="red">1638538651<font></font></font></p>
 <p> 参考：</p>
 
       <blockquote class="mdui-m-t-5">
         
-        <strong>本文链接：</strong><a href="yaolong.top/2019/09/24/基于Python-Opencv-Tensorflow-gpu-OpenPose的骨e人体骨骼识别/">yaolong.top/2019/09/24/基于Python-Opencv-Tensorflow-gpu-OpenPose的骨e人体骨骼识别/</a>
+        <strong>本文链接：</strong><a href="yaolong.top/2019/09/24/python-tensorflow-gpu-openpose/">yaolong.top/2019/09/24/python-tensorflow-gpu-openpose/</a>
       </blockquote>
       
         <div class="mdui-text-center">
