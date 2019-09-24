@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>win10下安装tensorflow-gpu</title>
+      <link href="/2019/09/24/win10%E4%B8%8B%E5%AE%89%E8%A3%85tensorflow-gpu/"/>
+      <url>/2019/09/24/win10%E4%B8%8B%E5%AE%89%E8%A3%85tensorflow-gpu/</url>
+      
+        <content type="html"><![CDATA[<h1 id="1、CUDA详细安装"><a href="#1、CUDA详细安装" class="headerlink" title="1、CUDA详细安装"></a>1、<a href="https://www.cnblogs.com/wanyu416/p/9536853.html" target="_blank" rel="noopener">CUDA详细安装</a></h1><h1 id="1、tensorflow-gpu-anaconda3-CUDA安装"><a href="#1、tensorflow-gpu-anaconda3-CUDA安装" class="headerlink" title="1、tensorflow-gpu+anaconda3+CUDA安装"></a>1、<a href="https://blog.csdn.net/weixin_39290638/article/details/80045236" target="_blank" rel="noopener">tensorflow-gpu+anaconda3+CUDA安装</a></h1>]]></content>
+      
+      
+      <categories>
+          
+          <category> 编程 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 环境 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>springboot20道面试题</title>
       <link href="/2019/09/23/springboot20%E9%81%93%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
       <url>/2019/09/23/springboot20%E9%81%93%E9%9D%A2%E8%AF%95%E9%A2%98/</url>
