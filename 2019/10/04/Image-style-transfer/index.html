@@ -8,30 +8,36 @@
   <meta name="renderer" content="webkit">
 
   
-  <title>游戏 | 耀龙的个人博客</title>
+  <title>图像风格迁移实现通过OpenCv显示并连接打印机打印 | 耀龙的个人博客</title>
 
   <link rel="shortcut icon" href="/images/favicon.png">
   <link rel="alternate" href="/atom.xml" title="耀龙的个人博客">
-  <meta property="og:type" content="article">
-<meta property="og:title" content="游戏">
-<meta property="og:url" content="yaolong.top/2019/08/21/游戏/index.html">
+  <meta name="description" content="风格迁移">
+<meta name="keywords" content="python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="图像风格迁移实现通过OpenCv显示并连接打印机打印">
+<meta property="og:url" content="yaolong.top/2019/10/04/Image-style-transfer/index.html">
 <meta property="og:site_name" content="耀龙的个人博客">
+<meta property="og:description" content="风格迁移">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="yaolong.top/2019/08/21/游戏/python-tensorflow-gpu-openpose/demo_mulu.png">
-<meta property="og:image" content="yaolong.top/2019/08/21/游戏/java%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E9%85%8D%E7%BD%AE-1/01.png">
-<meta property="og:updated_time" content="2019-09-24T14:57:40.394Z">
+<meta property="og:image" content="yaolong.top/2019/10/04/Image-style-transfer/Image-style-transfer/catalogue.png">
+<meta property="og:image" content="/2019/10/04/Image-style-transfer/catalogue.png">
+<meta property="og:image" content="yaolong.top/2019/10/04/Image-style-transfer/Image-style-transfer/test.png">
+<meta property="og:image" content="/2019/10/04/Image-style-transfer/test.png">
+<meta property="og:updated_time" content="2019-10-04T10:20:20.021Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="游戏">
-<meta name="twitter:image" content="yaolong.top/2019/08/21/游戏/python-tensorflow-gpu-openpose/demo_mulu.png">
+<meta name="twitter:title" content="图像风格迁移实现通过OpenCv显示并连接打印机打印">
+<meta name="twitter:description" content="风格迁移">
+<meta name="twitter:image" content="yaolong.top/2019/10/04/Image-style-transfer/Image-style-transfer/catalogue.png">
 
   <meta name="format-detection" content="telephone=no,email=no">
   <meta name="theme-color" content="#9C27B0">
-  <meta name="description" content="吃最少的经济 挨最毒的打">
-  <meta name="keywords" content>
+  <meta name="description" content="风格迁移">
+  <meta name="keywords" content=",python">
 
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="application-name" content="耀龙的个人博客">
-  <meta name="msapplication-starturl" content="yaolong.top/2019/08/21/游戏/">
+  <meta name="msapplication-starturl" content="yaolong.top/2019/10/04/Image-style-transfer/">
   <meta name="msapplication-navbutton-color" content="#9C27B0">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-title" content="耀龙的个人博客">
@@ -39,12 +45,12 @@
   <link rel="apple-touch-icon" href="/images/favicon.png">
 
   
-    <meta property="article:published_time" content="Wed Aug 21 2019 21:28:03 GMT+0800">
-    <meta property="article:modified_time" content="Tue Sep 24 2019 22:57:40 GMT+0800">
+    <meta property="article:published_time" content="Fri Oct 04 2019 17:40:24 GMT+0800">
+    <meta property="article:modified_time" content="Fri Oct 04 2019 18:20:20 GMT+0800">
   
 
   
-    <link rel="canonical" href="yaolong.top/2019/08/21/游戏/">
+    <link rel="canonical" href="yaolong.top/2019/10/04/Image-style-transfer/">
   
 
   
@@ -106,7 +112,7 @@
       </div>
       <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
         
-        <a class="mdui-ripple sidebar_archives-link" href="/archives/2019/09/">九月 2019<span class="mdui-ripple sidebar_archives-count">6</span></a><a class="mdui-ripple sidebar_archives-link" href="/archives/2019/08/">八月 2019<span class="mdui-ripple sidebar_archives-count">3</span></a>
+        <a class="mdui-ripple sidebar_archives-link" href="/archives/2019/10/">十月 2019<span class="mdui-ripple sidebar_archives-count">1</span></a><a class="mdui-ripple sidebar_archives-link" href="/archives/2019/09/">九月 2019<span class="mdui-ripple sidebar_archives-count">6</span></a><a class="mdui-ripple sidebar_archives-link" href="/archives/2019/08/">八月 2019<span class="mdui-ripple sidebar_archives-count">1</span></a>
         
       </div>
     </div>
@@ -118,7 +124,7 @@
       </div>
       <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
         
-        <a class="mdui-ripple sidebar_archives-link" href="/categories/编程/">编程<span class="mdui-ripple sidebar_archives-count">6</span></a>
+        <a class="mdui-ripple sidebar_archives-link" href="/categories/编程/">编程<span class="mdui-ripple sidebar_archives-count">7</span></a>
         
       </div>
     </div>
@@ -130,7 +136,7 @@
       </div>
       <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
         
-        <a class="mdui-ripple sidebar_archives-link" href="/tags/SpringBoot/">SpringBoot<span class="mdui-ripple sidebar_archives-count">1</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/go/">go<span class="mdui-ripple sidebar_archives-count">2</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/java/">java<span class="mdui-ripple sidebar_archives-count">1</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/python/">python<span class="mdui-ripple sidebar_archives-count">1</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/环境/">环境<span class="mdui-ripple sidebar_archives-count">1</span></a>
+        <a class="mdui-ripple sidebar_archives-link" href="/tags/SpringBoot/">SpringBoot<span class="mdui-ripple sidebar_archives-count">1</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/go/">go<span class="mdui-ripple sidebar_archives-count">2</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/java/">java<span class="mdui-ripple sidebar_archives-count">1</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/python/">python<span class="mdui-ripple sidebar_archives-count">2</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/环境/">环境<span class="mdui-ripple sidebar_archives-count">1</span></a>
         
       </div>
     </div>
@@ -169,11 +175,11 @@
   <style>#main article .mdui-card-content .center-block{display:block!important;margin-right:auto!important;margin-left:auto!important}</style>
   <article class="mdui-card mdui-m-b-5">
     <header class="mdui-card-media">
-      <img src="/images/random/material-10.png" style="max-height: 240px;">
+      <img src="/images/random/material-6.png" style="max-height: 240px;">
       <div class="mdui-card-media-covered">
         <div class="mdui-card-primary">
-          <div class="mdui-card-primary-title">游戏</div>
-          <div class="mdui-card-primary-subtitle"><i class="iconfont">&#xe697;</i> 2019-08-21 / <i class="iconfont">&#xe601;</i> 殷跃龙 &nbsp;&nbsp; <span id="busuanzi_container_page_pv" style="display: none;"><i class="iconfont">&#xe7fd;</i> <span id="busuanzi_value_page_pv"></span></span></div>
+          <div class="mdui-card-primary-title">图像风格迁移实现通过OpenCv显示并连接打印机打印</div>
+          <div class="mdui-card-primary-subtitle"><i class="iconfont">&#xe697;</i> 2019-10-04 / <i class="iconfont">&#xe601;</i> 殷跃龙 &nbsp;&nbsp; <span id="busuanzi_container_page_pv" style="display: none;"><i class="iconfont">&#xe7fd;</i> <span id="busuanzi_value_page_pv"></span></span></div>
         </div>
       </div>
       <div class="mdui-card-menu">
@@ -185,7 +191,7 @@
             
             <li class="mdui-menu-item" disabled>
               
-                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAAB20lEQVR42u3aQY7DIAwF0Nz/0p3tSKPQb0OnSXhZVRFteSws2/h4PeI5MDAwMDAwMDAuwzji5/f6s8/jb/1939sDBgbGnow3oe1kQ+OVY/bMHjAwMHZmJEE2/+MkEE/tAQMDAyNIAatvkkCMgYGBsSrgJuljD4mBgYExX8QmKWDSRPtyLY6BgXFDxqqLgZnPF7rfwMDAuBijPOLQarQl7/91ZgQDA+NWjLzgTNpn1fCaN+OatTgGBsYjGL1kboZdvcLEwMDAWBVeqyvzC4bTYTIMDIzNGFEqFrfh1oIxMDAweo2zmdGxfIyjMGyBgYHxaMa4UOylbjNXlUmhi4GBsRuj1w6rBtkkKRwHegwMDIyZdlgelNe25zAwMHZjrLoqSL6VF64YGBgYnyhN86BcTUkxMDB2ZsyMpSZl55uBCQwMDIxWalgl5ZtOitXCEWBgYGzGqG4u+ft8Ze84MDAwdmPkTy+kVpPF5rAFBgbGQxnVwFdNGXvtueiiFAMDYzPGzKVmFd8LuBgYGBjVQnS8fv44omsDDAwMjODnqiNfvUMpp4YYGBgYrfHTtYUuBgbGzoz5zeXs8ZF9vN2GgYFxQ0a1cZYPdfWuQjEwMDBej3gwMDAwMDAwML76/AB+DnOoEohXSwAAAABJRU5ErkJggg==">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACXElEQVR42u3aQW4DIQwF0Nz/0ukBItFvG+g0eqyqSTLlscCW7df7q9cLDw8PDw8PDw/vYbxXvD5/tX7P5/PJbwt7w8PDw7vC++WqXW4oP6zk/euDiPaGh4eHd5G3vqBz2Jq63mjyf38JM3h4eHiP5PW+n6fReHh4eN/Hy8sTkyd4eHh4z+flxYJqSp0k0Emh4XitBQ8PDy/m5U2m+39f7e/h4eHhBbzySFOrIFtNoLcNXeHh4eEd4OUXcYKZj15tGETAw8PDO8zrNe+rAaA3XpC8v5BS4+Hh4W3l5eOneXrda6T1DgIPDw/vCbwqKWnzVxPl6oHi4eHh3eRNmmHry70XKkYHjYeHh3eFl2+xWqTohYfqaBceHh7e03jJgFT1OPKmV/4pHh4e3h1eD5a8oTcQMEmm8fDw8J7D2xUe8k9HJQ88PDy8w7xCqjoYwDrdEsPDw8O7yVtf071CbT4gNSlPjFJqPDw8vAFvUmZ9BytH5gMEoyo1Hh4e3piXX9zV8kSSoCep84ZaCx4eHt4xXjW1TcoT1UPMn0Tjqnh4eHjHeDm1cEEPwEkyXa614OHh4R3j9S7laum2FzCi7+Ph4eFd5O0KGHmCXi18jFJqPDw8vE286qpufVfBAg8PD+85vFe8ei2xKrUXePDw8PDu85JgUC3X9kaseqMGeHh4eH/FO9EA6z3JgxMeHh7ef+H1Eu5qOy1525GhKzw8PLzDvCRI5MGg2pw7Hhjw8PDwxsWIKmAeNq7WWvDw8PBi3oZRpzhU5G+oDnLh4eHh3eF938LDw8PDw8PDw3vA+gFn+xYRplhopgAAAABJRU5ErkJggg==">
               
             </li>
           </ul>
@@ -194,36 +200,56 @@
           <button class="mdui-btn mdui-btn-icon mdui-text-color-white" mdui-menu="{target: '#share_menu', align: 'right'}"><i class="mdui-icon material-icons">share</i></button>
           <ul class="mdui-menu" id="share_menu">
             <li class="mdui-menu-item">
-              <a href="http://service.weibo.com/share/share.php?appkey=&title=游戏&url=yaolong.top/2019/08/21/游戏/&pic=yaolong.top/images/favicon.png&searchPic=false&style=simple" target="_blank" class="mdui-ripple">分享到微博</a>
+              <a href="http://service.weibo.com/share/share.php?appkey=&title=图像风格迁移实现通过OpenCv显示并连接打印机打印&url=yaolong.top/2019/10/04/Image-style-transfer/&pic=yaolong.top/images/favicon.png&searchPic=false&style=simple" target="_blank" class="mdui-ripple">分享到微博</a>
             </li>
             <li class="mdui-menu-item">
-              <a href="https://twitter.com/intent/tweet?text=游戏&url=yaolong.top/2019/08/21/游戏/&via=殷跃龙" target="_blank" class="mdui-ripple">分享到Twitter</a>
+              <a href="https://twitter.com/intent/tweet?text=图像风格迁移实现通过OpenCv显示并连接打印机打印&url=yaolong.top/2019/10/04/Image-style-transfer/&via=殷跃龙" target="_blank" class="mdui-ripple">分享到Twitter</a>
             </li>
             <li class="mdui-menu-item">
-              <a href="https://www.facebook.com/sharer/sharer.php?u=yaolong.top/2019/08/21/游戏/" target="_blank" class="mdui-ripple">分享到Facebook</a>
+              <a href="https://www.facebook.com/sharer/sharer.php?u=yaolong.top/2019/10/04/Image-style-transfer/" target="_blank" class="mdui-ripple">分享到Facebook</a>
             </li>
             <li class="mdui-menu-item">
-              <a href="https://plus.google.com/share?url=yaolong.top/2019/08/21/游戏/" target="_blank" class="mdui-ripple">分享到Google+</a>
+              <a href="https://plus.google.com/share?url=yaolong.top/2019/10/04/Image-style-transfer/" target="_blank" class="mdui-ripple">分享到Google+</a>
             </li>
             <li class="mdui-menu-item">
-              <a href="https://www.linkedin.com/shareArticle?mini=true&url=yaolong.top/2019/08/21/游戏/&title=游戏" target="_blank" class="mdui-ripple">分享到LinkedIn</a>
+              <a href="https://www.linkedin.com/shareArticle?mini=true&url=yaolong.top/2019/10/04/Image-style-transfer/&title=图像风格迁移实现通过OpenCv显示并连接打印机打印" target="_blank" class="mdui-ripple">分享到LinkedIn</a>
             </li>
             <li class="mdui-menu-item">
-              <a href="http://connect.qq.com/widget/shareqq/index.html?site=耀龙的个人博客&title=游戏&summary=吃最少的经济 挨最毒的打&pics=yaolong.top/images/favicon.png&url=yaolong.top/2019/08/21/游戏/" target="_blank" class="mdui-ripple">分享到QQ</a>
+              <a href="http://connect.qq.com/widget/shareqq/index.html?site=耀龙的个人博客&title=图像风格迁移实现通过OpenCv显示并连接打印机打印&summary=吃最少的经济 挨最毒的打&pics=yaolong.top/images/favicon.png&url=yaolong.top/2019/10/04/Image-style-transfer/" target="_blank" class="mdui-ripple">分享到QQ</a>
             </li>
             <li class="mdui-menu-item">
-              <a href="https://telegram.me/share/url?url=yaolong.top/2019/08/21/游戏/&text=游戏" target="_blank" class="mdui-ripple">分享到Telegram</a>
+              <a href="https://telegram.me/share/url?url=yaolong.top/2019/10/04/Image-style-transfer/&text=图像风格迁移实现通过OpenCv显示并连接打印机打印" target="_blank" class="mdui-ripple">分享到Telegram</a>
             </li>
           </ul>
         
       </div>
     </header>
     <div class="mdui-card-content mdui-typo">
-      <p><img src="python-tensorflow-gpu-openpose/demo_mulu.png" alt><br><br><img src="java%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E9%85%8D%E7%BD%AE-1/01.png" alt><br></p>
+      <h1 id="1、使用教程"><a href="#1、使用教程" class="headerlink" title="1、使用教程"></a>1、使用教程</h1><h2 id="1-1-、安装环境"><a href="#1-1-、安装环境" class="headerlink" title="1.1 、安装环境"></a>1.1 、安装环境</h2><p><a href="https://github.com/yaolong1/pyimagesearch-neural-style-transfer-master" target="_blank" rel="noopener">demo地址</a></p>
+<p>下载后目录结构如下</p>
+<hr>
+<p><img src="Image-style-transfer/catalogue.png" alt><br></p>
+<img src="/2019/10/04/Image-style-transfer/catalogue.png" title="This is an example image">
+
+
+
+<hr>
+<p>python环境  python 3.6.x </p>
+<p>用pip安装好以下环境</p>
+ <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">pip install opencv-python</span><br><span class="line">pip install imutils</span><br><span class="line">pip install itertools</span><br><span class="line">pip install argparse</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="1-2、测试"><a href="#1-2、测试" class="headerlink" title="1.2、测试"></a>1.2、测试</h2><p>进入项目根目录 命令行输入以下命令：</p>
+<pre><code>python neural_style_transfer_video.py --models models</code></pre><hr>
+<p><font color="red"><h2>运行成功!!如下图：<h2><font> </font></h2></h2></font></p>
+<p><img src="Image-style-transfer/test.png" alt><br></p>
+<img src="/2019/10/04/Image-style-transfer/test.png" title="This is an example image">
+
+<p><font color="red">有问题的联系QQ：<font color="red">1638538651<font></font></font></font></p>
 
       <blockquote class="mdui-m-t-5">
         
-        <strong>本文链接：</strong><a href="yaolong.top/2019/08/21/游戏/">yaolong.top/2019/08/21/游戏/</a>
+        <strong>本文链接：</strong><a href="yaolong.top/2019/10/04/Image-style-transfer/">yaolong.top/2019/10/04/Image-style-transfer/</a>
       </blockquote>
       
         <div class="mdui-text-center">
@@ -233,6 +259,10 @@
     </div>
     <footer class="mdui-card-actions">
       
+        <a class="mdui-ripple article_categories-link" href="/categories/编程/">编程</a>
+      
+      
+        <a class="mdui-ripple article_tags-link" href="/tags/python/">python</a>
       
     </footer>
     
@@ -268,14 +298,9 @@
 
   <nav id="paginator">
     
-      <a rel="prev" class="extend prev" href="/2019/08/22/我的博客/">
-        <button aria-label="prev" class="mdui-btn mdui-btn-raised mdui-btn-dense mdui-btn-icon mdui-color-theme-accent mdui-ripple"><i class="mdui-icon material-icons">arrow_back</i></button>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;上一篇
-      </a>
-    
     <div class="spacer"></div>
     
-      <a rel="next" class="extend next" href="/2019/08/21/java环境变量配置-1/">
+      <a rel="next" class="extend next" href="/2019/09/25/hello-world/">
         下一篇&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <button aria-label="next" class="mdui-btn mdui-btn-raised mdui-btn-dense mdui-btn-icon mdui-color-theme-accent mdui-ripple"><i class="mdui-icon material-icons">arrow_forward</i></button>
       </a>
