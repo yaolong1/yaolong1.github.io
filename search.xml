@@ -8,7 +8,7 @@
       <link href="/2019/11/10/%E4%BB%80%E4%B9%88%E6%98%AF%E5%88%86%E5%B8%83%E5%BC%8F%E5%8D%8F%E8%B0%83%E6%8A%80%E6%9C%AF/"/>
       <url>/2019/11/10/%E4%BB%80%E4%B9%88%E6%98%AF%E5%88%86%E5%B8%83%E5%BC%8F%E5%8D%8F%E8%B0%83%E6%8A%80%E6%9C%AF/</url>
       
-        <content type="html"><![CDATA[<h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>分布式协调技术主要用来解决分布式环境当中多个进程之间的同步控制，让他们有序的去访问某种临界资源，防止造成”脏数据”的后果。</p><p><img src="%E4%BB%80%E4%B9%88%E6%98%AF%E5%88%86%E5%B8%83%E5%BC%8F%E5%8D%8F%E8%B0%83%E6%8A%80%E6%9C%AF/01.png" alt></p><p>在这图中有三台机器，每台机器各跑一个应用程序。然后我们将这三台机器通过网络将其连接起来，构成一个系统来为用户提供服务，对用户来说这个系统的架构是透明的，他感觉不到我这个系统是一个什么样的架构。那么我们就可以把这种系统称作一个<font color="red">分布式系统</font>。</p><p>在这个分布式系统中如何对进程进行调度，我假设在第一台机器上挂载了一个资源，然后这三个物理分布的进程都要竞争这个资源，但我们又不希望他们同时进行访问，这时候我们就需要一个协调器，来让他们有序的来访问这个资源。这个协调器就是我们经常提到的那个锁，比如说”进程-1”在使用该资源的时候，会先去获得锁，”进程1”获得锁以后会对该资源保持独占，这样其他进程就无法访问该资源，”进程1”用完该资源以后就将锁释放掉，让其他进程来获得锁，那么通过这个锁机制，我们就能保证了分布式系统中多个进程能够有序的访问该临界资源。那么我们把这个分布式环境下的这个锁叫作分布式锁。这个分布式锁也就是我们分布式协调技术实现的核心内容。</p><p><img src="%E4%BB%80%E4%B9%88%E6%98%AF%E5%88%86%E5%B8%83%E5%BC%8F%E5%8D%8F%E8%B0%83%E6%8A%80%E6%9C%AF%5C%E5%88%86%E5%B8%83%E5%BC%8F%E9%94%81.png" alt></p><p><a href="https://www.funtl.com/zh/apache-dubbo-zookeeper/%E4%BB%80%E4%B9%88%E6%98%AF%E5%88%86%E5%B8%83%E5%BC%8F%E5%8D%8F%E8%B0%83%E6%8A%80%E6%9C%AF.html#%E6%A6%82%E8%BF%B0" target="_blank" rel="noopener">參考</a></p>]]></content>
+        <content type="html"><![CDATA[<h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>分布式协调技术主要用来解决分布式环境当中多个进程之间的同步控制，让他们有序的去访问某种临界资源，防止造成”脏数据”的后果。</p><p><img src="%E4%BB%80%E4%B9%88%E6%98%AF%E5%88%86%E5%B8%83%E5%BC%8F%E5%8D%8F%E8%B0%83%E6%8A%80%E6%9C%AF/01.png" alt></p><img src="/2019/11/10/什么是分布式协调技术/01.png" title="This is an example image"><p>在这图中有三台机器，每台机器各跑一个应用程序。然后我们将这三台机器通过网络将其连接起来，构成一个系统来为用户提供服务，对用户来说这个系统的架构是透明的，他感觉不到我这个系统是一个什么样的架构。那么我们就可以把这种系统称作一个<font color="red">分布式系统</font>。</p><p>在这个分布式系统中如何对进程进行调度，我假设在第一台机器上挂载了一个资源，然后这三个物理分布的进程都要竞争这个资源，但我们又不希望他们同时进行访问，这时候我们就需要一个协调器，来让他们有序的来访问这个资源。这个协调器就是我们经常提到的那个锁，比如说”进程-1”在使用该资源的时候，会先去获得锁，”进程1”获得锁以后会对该资源保持独占，这样其他进程就无法访问该资源，”进程1”用完该资源以后就将锁释放掉，让其他进程来获得锁，那么通过这个锁机制，我们就能保证了分布式系统中多个进程能够有序的访问该临界资源。那么我们把这个分布式环境下的这个锁叫作分布式锁。这个分布式锁也就是我们分布式协调技术实现的核心内容。</p><p><img src="%E4%BB%80%E4%B9%88%E6%98%AF%E5%88%86%E5%B8%83%E5%BC%8F%E5%8D%8F%E8%B0%83%E6%8A%80%E6%9C%AF%5C%E5%88%86%E5%B8%83%E5%BC%8F%E9%94%81.png" alt></p><img src="/2019/11/10/什么是分布式协调技术/分布式锁.png" title="This is an example image"><p><a href="https://www.funtl.com/zh/apache-dubbo-zookeeper/%E4%BB%80%E4%B9%88%E6%98%AF%E5%88%86%E5%B8%83%E5%BC%8F%E5%8D%8F%E8%B0%83%E6%8A%80%E6%9C%AF.html#%E6%A6%82%E8%BF%B0" target="_blank" rel="noopener">參考</a></p>]]></content>
       
       
       <categories>
@@ -109,6 +109,56 @@
         <tags>
             
             <tag> python </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>zookeeper</title>
+      <link href="/2019/09/24/zookeeper/"/>
+      <url>/2019/09/24/zookeeper/</url>
+      
+        <content type="html"><![CDATA[<h1 id="1、服务注册与发现"><a href="#1、服务注册与发现" class="headerlink" title="1、服务注册与发现"></a>1、服务注册与发现</h1><img src="/2019/09/24/zookeeper/zookeeper服务注册与发现.png" title="This is an example image"><hr><h1 id="2、集群崩溃与恢复"><a href="#2、集群崩溃与恢复" class="headerlink" title="2、集群崩溃与恢复"></a>2、集群崩溃与恢复</h1><hr><img src="/2019/09/24/zookeeper/zookeeper集群崩溃和恢复.png" title="This is an example image"><h1 id="3、数据一致性原理"><a href="#3、数据一致性原理" class="headerlink" title="3、数据一致性原理"></a>3、数据一致性原理</h1><hr><img src="/2019/09/24/zookeeper/zookeeper数据一致性原理.png" title="This is an example image"><h1 id="4、zookeeper实现分布式锁"><a href="#4、zookeeper实现分布式锁" class="headerlink" title="4、zookeeper实现分布式锁"></a>4、zookeeper实现分布式锁</h1><hr><p>临时有序节点实现分布式锁  通过watch观察</p><p><a href="https://www.funtl.com/zh/apache-dubbo-zookeeper/Zookeeper-%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%E5%88%86%E5%B8%83%E5%BC%8F%E9%94%81.html#%E6%9C%AC%E8%8A%82%E8%A7%86%E9%A2%91" target="_blank" rel="noopener">详情</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 编程 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>什么是spring</title>
+      <link href="/2019/09/24/spring%E6%98%AF%E4%BB%80%E4%B9%88%E5%91%A2/"/>
+      <url>/2019/09/24/spring%E6%98%AF%E4%BB%80%E4%B9%88%E5%91%A2/</url>
+      
+        <content type="html"><![CDATA[<h1 id="什么是spring？"><a href="#什么是spring？" class="headerlink" title="什么是spring？"></a>什么是spring？</h1><hr><p>正规回答是：</p><p>   spring是一个轻量级的JavaEE框架,主要作用是解决企业及开发的复杂度问题，而复杂度问题就是耦合度，所以spring就是为了解耦，他是怎么解耦的呢？他有个东西两个东西解耦，一个是ioc，一个是aop</p><h2 id="那么什么是IOC呢？"><a href="#那么什么是IOC呢？" class="headerlink" title="那么什么是IOC呢？"></a>那么什么是IOC呢？</h2><p> 举个例子： </p><p>  就拿找对象来说吧，男人嘛难免会寂寞，我们寝室里面就有一个天天思春的男人，想找对象，可是呢找对象谈何容易，要自己去问妹子的qq、名字，喜欢什么，有好感了之后还要聊天培养感情，然后就会觉得很麻烦。但是呢有一种地方很方便，叫什么会所来着，这个会所啊它会帮助思春的人找对象，只要你想找对象了就进去注册登记一下然后会所的前台就会提供各种各样符合你条件的妹子，这样就省去了很大的麻烦，不用自己去维护与妹子的关系，超赞！</p><p>  上述例子之中某某会所啊就是我们所说的ioc,就是维护关系的（你懂的）。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 编程 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> java </tag>
             
         </tags>
       
