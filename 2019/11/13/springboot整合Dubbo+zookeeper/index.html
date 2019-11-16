@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <meta name="renderer" content="webkit">
+
+  
+  <title>springboot整合Dubbo+Zookeeper | 耀龙的个人博客</title>
+
+  <link rel="shortcut icon" href="/images/favicon.png">
+  <link rel="alternate" href="/atom.xml" title="耀龙的个人博客">
+  <meta name="description" content="Dubbo+Zookeeper">
+<meta name="keywords" content="java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="springboot整合Dubbo+Zookeeper">
+<meta property="og:url" content="yaolong.top/2019/11/13/springboot整合Dubbo+zookeeper/index.html">
+<meta property="og:site_name" content="耀龙的个人博客">
+<meta property="og:description" content="Dubbo+Zookeeper">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="yaolong.top/2019/11/13/springboot整合Dubbo+zookeeper/springboot%E6%95%B4%E5%90%88Dubbo+zookeeper/DubboAdmin.png">
+<meta property="og:image" content="/2019/11/13/springboot整合Dubbo+zookeeper/DubboAdmin.png">
+<meta property="og:image" content="yaolong.top/2019/11/13/springboot整合Dubbo+zookeeper/springboot%E6%95%B4%E5%90%88Dubbo+zookeeper/test.png">
+<meta property="og:image" content="/2019/11/13/springboot整合Dubbo+zookeeper/test.png">
+<meta property="og:image" content="yaolong.top/2019/11/13/springboot整合Dubbo+zookeeper/springboot%E6%95%B4%E5%90%88Dubbo+zookeeper/DubboAdmin.png">
+<meta property="og:image" content="/2019/11/13/springboot整合Dubbo+zookeeper/DubboAdmin.png">
+<meta property="og:updated_time" content="2019-11-13T12:02:43.581Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="springboot整合Dubbo+Zookeeper">
+<meta name="twitter:description" content="Dubbo+Zookeeper">
+<meta name="twitter:image" content="yaolong.top/2019/11/13/springboot整合Dubbo+zookeeper/springboot%E6%95%B4%E5%90%88Dubbo+zookeeper/DubboAdmin.png">
+
+  <meta name="format-detection" content="telephone=no,email=no">
+  <meta name="theme-color" content="#9C27B0">
+  <meta name="description" content="Dubbo+Zookeeper">
+  <meta name="keywords" content=",java">
+
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="耀龙的个人博客">
+  <meta name="msapplication-starturl" content="yaolong.top/2019/11/13/springboot整合Dubbo+zookeeper/">
+  <meta name="msapplication-navbutton-color" content="#9C27B0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="耀龙的个人博客">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <link rel="apple-touch-icon" href="/images/favicon.png">
+
+  
+    <meta property="article:published_time" content="Wed Nov 13 2019 12:08:38 GMT+0800">
+    <meta property="article:modified_time" content="Wed Nov 13 2019 20:02:43 GMT+0800">
+  
+
+  
+    <link rel="canonical" href="yaolong.top/2019/11/13/springboot整合Dubbo+zookeeper/">
+  
+
+  
+  
+
+  
+  
+  
+
+  <link rel="stylesheet" href="/css/mdui.css">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="mdui-appbar-with-toolbar mdui-drawer-body-left mdui-theme-primary-indigo mdui-theme-accent-pink">
+  <script>var a=localStorage.getItem("mdui-theme-layout-dark");if(a){document.getElementsByTagName("body")[0].className+=" mdui-theme-layout-dark"};</script>
+  <header id="header" class="mdui-appbar mdui-appbar-fixed mdui-appbar-scroll-hide mdui-appbar-inset">
+  <div class="mdui-toolbar mdui-color-theme">
+    <a href="javascript:;" class="mdui-btn mdui-btn-icon" mdui-drawer="{target: '#sidebar', swipe: true}"><i class="mdui-icon material-icons">menu</i></a>
+    <a href="/" class="mdui-typo-headline">耀龙的个人博客</a>
+    <div class="mdui-toolbar-spacer"></div>
+    <a href="javascript:;" class="mdui-btn mdui-btn-icon" mdui-dialog="{target: '#search'}" mdui-tooltip="{content: '搜索'}"><i class="mdui-icon material-icons">search</i></a>
+    <a href="/atom.xml" class="mdui-btn mdui-btn-icon" mdui-tooltip="{content: 'RSS'}"><i class="mdui-icon material-icons">rss_feed</i></a>
+  </div>
+</header>
+<div class="mdui-dialog" id="search">
+  
+    <div class="search-form">
+      <input type="search" class="search-form-input" placeholder="请输入关键字">
+    </div>
+    <div class="search-result" data-resource="/search.xml"></div>
+  
+</div>
+  <aside id="sidebar" class="mdui-drawer mdui-drawer-full-height">
+  <div class="mdui-grid-tile">
+    <img src="/images/banner.png" style="height: 160px;">
+    <img src="/images/myavatar.jpg" class="avatar-animation" style="position: absolute; top: 10%; left: 24px; width: 64px; height: 64px; border: 2px solid #fff; border-radius: 50%;">
+    <div class="mdui-grid-tile-actions">
+      <div class="mdui-grid-tile-text">
+        <div class="mdui-grid-tile-title">殷跃龙</div>
+        <div class="mdui-grid-tile-subtitle"><i class="mdui-icon material-icons">art_track</i></div>
+      </div>
+      
+        <div class="mdui-grid-tile-buttons">
+          <a href="mailto:1638538651@qq.com" class="mdui-btn mdui-btn-icon" mdui-tooltip="{content: '1638538651@qq.com'}"><i class="mdui-icon material-icons">email</i></a>
+        </div>
+      
+    </div>
+  </div>
+
+  <div class="mdui-list" mdui-collapse="{accordion: true}">
+    <a href="/" class="mdui-list-item mdui-ripple">
+      <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-blue">home</i>
+      <div class="mdui-list-item-content">主页</div>
+    </a>
+    <div class="mdui-collapse-item">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-deep-orange">inbox</i>
+        <div class="mdui-list-item-content">归档</div>
+        <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
+        
+        <a class="mdui-ripple sidebar_archives-link" href="/archives/2019/11/">十一月 2019<span class="mdui-ripple sidebar_archives-count">4</span></a><a class="mdui-ripple sidebar_archives-link" href="/archives/2019/10/">十月 2019<span class="mdui-ripple sidebar_archives-count">1</span></a><a class="mdui-ripple sidebar_archives-link" href="/archives/2019/09/">九月 2019<span class="mdui-ripple sidebar_archives-count">8</span></a><a class="mdui-ripple sidebar_archives-link" href="/archives/2019/08/">八月 2019<span class="mdui-ripple sidebar_archives-count">1</span></a>
+        
+      </div>
+    </div>
+    <div class="mdui-collapse-item">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-green">chrome_reader_mode</i>
+        <div class="mdui-list-item-content">分类</div>
+        <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
+        
+        <a class="mdui-ripple sidebar_archives-link" href="/categories/编程/">编程<span class="mdui-ripple sidebar_archives-count">13</span></a>
+        
+      </div>
+    </div>
+    <div class="mdui-collapse-item">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-brown">bookmark</i>
+        <div class="mdui-list-item-content">标签</div>
+        <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
+        
+        <a class="mdui-ripple sidebar_archives-link" href="/tags/SpringBoot/">SpringBoot<span class="mdui-ripple sidebar_archives-count">1</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/go/">go<span class="mdui-ripple sidebar_archives-count">2</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/java/">java<span class="mdui-ripple sidebar_archives-count">5</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/python/">python<span class="mdui-ripple sidebar_archives-count">2</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/微服务/">微服务<span class="mdui-ripple sidebar_archives-count">2</span></a><a class="mdui-ripple sidebar_archives-link" href="/tags/环境/">环境<span class="mdui-ripple sidebar_archives-count">1</span></a>
+        
+      </div>
+    </div>
+    <a href="/about" class="mdui-list-item mdui-ripple">
+      <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-purple">person</i>
+      <div class="mdui-list-item-content">关于</div>
+    </a>
+  </div>
+
+  <div class="mdui-divider"></div>
+
+  <div class="mdui-list" mdui-collapse="{accordion: true}">
+    
+      <a href="/tagcloud" class="mdui-list-item mdui-ripple">标签云</a>
+    
+      <a href="/gallery" class="mdui-list-item mdui-ripple">画廊</a>
+    
+      <a href="/tv" class="mdui-list-item mdui-ripple">电视直播</a>
+    
+    <div class="mdui-collapse-item">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <div class="mdui-list-item-content">友情链接</div>
+        <i class="mdui-list-item-icon mdui-icon material-icons">link</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
+        
+          <a href="http://yaolong.top/" target="_blank" class="mdui-list-item mdui-ripple mdui-p-l-2 mdui-text-color-theme-accent" style="justify-content: center;">我的简历</a>
+        
+        
+      </div>
+    </div>
+  </div>
+</aside>
+  <main id="main" class="mdui-m-t-5 fadeIn animated">
+  <link rel="stylesheet" href="https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.css">
+  <style>#main article .mdui-card-content .center-block{display:block!important;margin-right:auto!important;margin-left:auto!important}</style>
+  <article class="mdui-card mdui-m-b-5">
+    <header class="mdui-card-media">
+      <img src="/images/random/material-9.png" style="max-height: 240px;">
+      <div class="mdui-card-media-covered">
+        <div class="mdui-card-primary">
+          <div class="mdui-card-primary-title">springboot整合Dubbo+Zookeeper</div>
+          <div class="mdui-card-primary-subtitle"><i class="iconfont">&#xe697;</i> 2019-11-13 / <i class="iconfont">&#xe601;</i> 殷跃龙 &nbsp;&nbsp; <span id="busuanzi_container_page_pv" style="display: none;"><i class="iconfont">&#xe7fd;</i> <span id="busuanzi_value_page_pv"></span></span></div>
+        </div>
+      </div>
+      <div class="mdui-card-menu">
+        
+          <button class="mdui-btn mdui-btn-icon mdui-text-color-white" mdui-menu="{target: '#qrcode', align: 'right'}"><i class="mdui-icon material-icons">devices</i></button>
+          <ul class="mdui-menu" id="qrcode">
+            
+              <li class="mdui-menu-item"><a class="mdui-text-center mdui-ripple">发送到手机</a></li>
+            
+            <li class="mdui-menu-item" disabled>
+              
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACX0lEQVR42u3aQXLDIBAEQP//08kDEuMZQERKNSeXS5ZpDrA1y+vrX48XHh4eHh4eHh7ezXiveCS/+uXP3vx2/LalueHh4eEd4X3YaofPJEuQv/Mnr50bHh4e3kneeIOe+8t8aZL/HT+Dh4eH91zeHDL5jIeHh/dc3jhimAsybnQw4OHh4W0NI5KwtQ0s5kIQPDw8vL/lrWzWV38+2t/Dw8PDC3jt2Lu5z8UcH2aIh4eHdzEv34jHJfLc88nC5Re88PDw8M7w5grcpPHfRsDj9+fHCR4eHt7VvKSoXQkO8oMhj4/rrAUPDw9vK69uzJfRQ7sECXiypMbDw8PbxGsb/+0S5E21lv32ezw8PLyLefmGO/dki9ywuHh4eHhHeDmmnUTeEsuj4fpgwMPDw9vKSyLauQZYElu04S8eHh7eHXj5i/JIdy6i3bWIeHh4eFfz8itQ+bTaSwNtIf5h0fHw8PAO8nZdrkqWKflVe60BDw8P7zwv+X7vobIrJsbDw8M7yWsjgPYgaZdy/RIDHh4e3tW8NpydK77niux84OHh4d2B10YM7RWr9jJWXrLj4eHhneTljat2uivhwraSGg8PD+8yXtvaT6a1i72hv4eHh4e3zGtHvnGvtLiKYyBJqfHw8PC28tY3/WQh2tC2Lffx8PDwzvNWJjoX444XdyW8wMPDwzvJyzfodhLt8kUMPDw8vEfx2qI5PzxaMB4eHt6zePlU5sKF8fHz9pjBw8PDO8hbaXrNFcFFWysv0PHw8PCO8NqrTm3JO3e1KwHj4eHhnef9v4GHh4eHh4eHh3eD8Q22MDUArWrB5wAAAABJRU5ErkJggg==">
+              
+            </li>
+          </ul>
+        
+        
+          <button class="mdui-btn mdui-btn-icon mdui-text-color-white" mdui-menu="{target: '#share_menu', align: 'right'}"><i class="mdui-icon material-icons">share</i></button>
+          <ul class="mdui-menu" id="share_menu">
+            <li class="mdui-menu-item">
+              <a href="http://service.weibo.com/share/share.php?appkey=&title=springboot整合Dubbo+Zookeeper&url=yaolong.top/2019/11/13/springboot整合Dubbo+zookeeper/&pic=yaolong.top/images/favicon.png&searchPic=false&style=simple" target="_blank" class="mdui-ripple">分享到微博</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="https://twitter.com/intent/tweet?text=springboot整合Dubbo+Zookeeper&url=yaolong.top/2019/11/13/springboot整合Dubbo+zookeeper/&via=殷跃龙" target="_blank" class="mdui-ripple">分享到Twitter</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="https://www.facebook.com/sharer/sharer.php?u=yaolong.top/2019/11/13/springboot整合Dubbo+zookeeper/" target="_blank" class="mdui-ripple">分享到Facebook</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="https://plus.google.com/share?url=yaolong.top/2019/11/13/springboot整合Dubbo+zookeeper/" target="_blank" class="mdui-ripple">分享到Google+</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="https://www.linkedin.com/shareArticle?mini=true&url=yaolong.top/2019/11/13/springboot整合Dubbo+zookeeper/&title=springboot整合Dubbo+Zookeeper" target="_blank" class="mdui-ripple">分享到LinkedIn</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="http://connect.qq.com/widget/shareqq/index.html?site=耀龙的个人博客&title=springboot整合Dubbo+Zookeeper&summary=吃最少的经济 挨最毒的打&pics=yaolong.top/images/favicon.png&url=yaolong.top/2019/11/13/springboot整合Dubbo+zookeeper/" target="_blank" class="mdui-ripple">分享到QQ</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="https://telegram.me/share/url?url=yaolong.top/2019/11/13/springboot整合Dubbo+zookeeper/&text=springboot整合Dubbo+Zookeeper" target="_blank" class="mdui-ripple">分享到Telegram</a>
+            </li>
+          </ul>
+        
+      </div>
+    </header>
+    <div class="mdui-card-content mdui-typo">
+      <h1 id="1、概述"><a href="#1、概述" class="headerlink" title="1、概述"></a>1、概述</h1><p>Apache Dubbo (incubating) |ˈdʌbəʊ| 是一款高性能、轻量级的开源 Java RPC 分布式服务框架，它提供了三大核心能力：面向接口的远程方法调用，智能容错和负载均衡，以及服务自动注册和发现。她最大的特点是按照分层的方式来架构，使用这种方式可以使各个层之间解耦合（或者最大限度地松耦合）。从服务模型的角度来看，Dubbo 采用的是一种非常简单的模型，要么是提供方提供服务，要么是消费方消费服务，所以基于这一点可以抽象出服务提供方（Provider）和服务消费方（Consumer）两个角色。</p>
+<ul>
+<li>官网：<a href="http://dubbo.apache.org/zh-cn" target="_blank" rel="noopener">http://dubbo.apache.org/zh-cn</a></li>
+<li>GitHub：<a href="https://github.com/apache/incubator-dubbo" target="_blank" rel="noopener">https://github.com/apache/incubator-dubbo</a></li>
+</ul>
+<h1 id="2、Dubbo-特性"><a href="#2、Dubbo-特性" class="headerlink" title="2、Dubbo  特性"></a>2、Dubbo  特性</h1><ul>
+<li><p>透明远程调用</p>
+<p> 就像调用本地方法一样调用远程方法；只需简单的配置，没有任何API侵入</p>
+</li>
+<li><p>负载均衡机制</p>
+<p>  Client 端LB，可以再内网替代F5等硬件负载均衡器</p>
+</li>
+<li><p>容错重试机制</p>
+<p>  服务Mock数据，重试次数、超时机制等</p>
+</li>
+<li><p>自动注册与发现</p>
+<p>  注册中心基于接口名查询服务提供者的ip地址，并且能够平滑添加或删除服务提供者</p>
+</li>
+<li><p>性能日志监控 </p>
+<p>  Monitor统计服务的调用次数调和调用时间的监控中心</p>
+</li>
+<li><p>服务治理中心</p>
+<p>  路由规则，动态配置，服务降级，访问控制，权重调整，负载均衡，等手动配置    </p>
+</li>
+<li><p>自动治理中心</p>
+<p>  无，比如：熔断限流机制、自动权重调整等（这些可以用springcloud中的集成）</p>
+</li>
+</ul>
+<hr>
+<h1 id="3、Dubbo-核心功能"><a href="#3、Dubbo-核心功能" class="headerlink" title="3、Dubbo  核心功能"></a>3、Dubbo  核心功能</h1><ul>
+<li><p>Remoting: 远程通讯，提供对多种NIO框架抽象封装，包括‘同步转异步’和“请求-响应”模式的信息交互方式。</p>
+</li>
+<li><p>Cluster：服务框架、提供基于接口方法的透明远程过程调用，包括多协议支持，以及软负载均衡，失败容错，地址路由，动态配置等集群支持。</p>
+</li>
+<li><p>registry：服务注册中心、服务自动发现：给予朱扯中心目录服务，使消费方能动态的查找服务提供方，使地址透明，使服务提供方可以平滑增加或减少机器</p>
+</li>
+</ul>
+<hr>
+<h1 id="4、Dubbo-组件角色"><a href="#4、Dubbo-组件角色" class="headerlink" title="4、Dubbo 组件角色"></a>4、Dubbo 组件角色</h1><ul>
+<li><p>Provider</p>
+<p> 暴露服务的服务提供方</p>
+</li>
+<li><p>Consumer</p>
+<p> 调用于远程服务的服务消费方</p>
+</li>
+<li><p>Registry</p>
+<p> 服务注册与发现的注册中心</p>
+</li>
+<li><p>Monitor</p>
+<p> 统计服务的调用次数和调用时间的监控中心</p>
+</li>
+<li><p>Container</p>
+<p> 服务运行容器</p>
+</li>
+</ul>
+<h1 id="5、Dubbo-Admin-管理控制台"><a href="#5、Dubbo-Admin-管理控制台" class="headerlink" title="5、Dubbo Admin 管理控制台"></a>5、Dubbo Admin 管理控制台</h1><ul>
+<li><p>控制台git仓库克隆</p>
+<p>git clone <a href="https://github.com/apache/dubbo-admin.git" target="_blank" rel="noopener">https://github.com/apache/dubbo-admin.git</a></p>
+</li>
+<li><p>在dubbo-admin-server/src/main/resources/application.properties中指定注册中心地址 </p>
+</li>
+<li><p>构建</p>
+<p>mvn clean package</p>
+</li>
+<li><p>启动</p>
+<p>mvn –projects dubbo-admin-server spring-boot:run   或者cd dubbo-admin-distribution/target; java -jar dubbo-admin-0.1.jar</p>
+<ul>
+<li>访问 <a href="http://localhost:8080" target="_blank" rel="noopener">http://localhost:8080</a></li>
+</ul>
+<p>如图：<br><img src="springboot%E6%95%B4%E5%90%88Dubbo+zookeeper/DubboAdmin.png" alt></p>
+<img src="/2019/11/13/springboot整合Dubbo+zookeeper/DubboAdmin.png" title="DubboAdmin">
+
+
+
+</li>
+</ul>
+<h1 id="6、第一个Dubbo项目"><a href="#6、第一个Dubbo项目" class="headerlink" title="6、第一个Dubbo项目"></a>6、第一个Dubbo项目</h1><h3 id="1、创建服务接口项目-hello-dubbo-service-user-api"><a href="#1、创建服务接口项目-hello-dubbo-service-user-api" class="headerlink" title="1、创建服务接口项目 hello-dubbo-service-user-api"></a>1、创建服务接口项目 <code>hello-dubbo-service-user-api</code></h3><p><strong>UserService 接口</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">package com.yaolong.hello.dubbo.service.user.api;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line">* @author yaoLong</span><br><span class="line">* @date 2019/11/13  13:59</span><br><span class="line">*/</span><br><span class="line">public interface UserService &#123;</span><br><span class="line"></span><br><span class="line">   String sayHi();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>pom.xml</strong></p>
+<hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span><br><span class="line">&lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot;</span><br><span class="line">         xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span><br><span class="line">         xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;&gt;</span><br><span class="line">    &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;</span><br><span class="line"></span><br><span class="line">    &lt;groupId&gt;com.yaolong&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;hello-dubbo-service-user-api&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;1.0.0-SNAPSHOT&lt;/version&gt;</span><br><span class="line">    &lt;packaging&gt;jar&lt;/packaging&gt;</span><br><span class="line"></span><br><span class="line">    &lt;properties&gt;</span><br><span class="line">        &lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;</span><br><span class="line">        &lt;project.reporting.outputEncoding&gt;UTF-8&lt;/project.reporting.outputEncoding&gt;</span><br><span class="line">        &lt;java.version&gt;1.8&lt;/java.version&gt;</span><br><span class="line">    &lt;/properties&gt;</span><br><span class="line">&lt;/project&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2、创建服务提供者项目-hello-dubbo-service-user-provider"><a href="#2、创建服务提供者项目-hello-dubbo-service-user-provider" class="headerlink" title="2、创建服务提供者项目 hello-dubbo-service-user-provider"></a>2、创建服务提供者项目 <code>hello-dubbo-service-user-provider</code></h3><p><strong>pom.xml</strong></p>
+<hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span><br><span class="line">&lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span><br><span class="line">         xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;&gt;</span><br><span class="line">    &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;</span><br><span class="line"></span><br><span class="line">    &lt;groupId&gt;com.yaolong&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;hello-dubbo-service-user-provider&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;1.0.0-SNAPSHOT&lt;/version&gt;</span><br><span class="line">    &lt;packaging&gt;jar&lt;/packaging&gt;</span><br><span class="line"></span><br><span class="line">    &lt;name&gt;hello-dubbo-service-user-provider&lt;/name&gt;</span><br><span class="line">    &lt;description&gt;Demo project for Spring Boot&lt;/description&gt;</span><br><span class="line"></span><br><span class="line">    &lt;parent&gt;</span><br><span class="line">        &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">        &lt;artifactId&gt;spring-boot-starter-parent&lt;/artifactId&gt;</span><br><span class="line">        &lt;version&gt;2.0.6.RELEASE&lt;/version&gt;</span><br><span class="line">        &lt;relativePath/&gt; &lt;!-- lookup parent from repository --&gt;</span><br><span class="line">    &lt;/parent&gt;</span><br><span class="line"></span><br><span class="line">    &lt;properties&gt;</span><br><span class="line">        &lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;</span><br><span class="line">        &lt;project.reporting.outputEncoding&gt;UTF-8&lt;/project.reporting.outputEncoding&gt;</span><br><span class="line">        &lt;java.version&gt;1.8&lt;/java.version&gt;</span><br><span class="line">    &lt;/properties&gt;</span><br><span class="line"></span><br><span class="line">    &lt;dependencies&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;spring-boot-starter&lt;/artifactId&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;spring-boot-starter-actuator&lt;/artifactId&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;spring-boot-starter-test&lt;/artifactId&gt;</span><br><span class="line">            &lt;scope&gt;test&lt;/scope&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br><span class="line"></span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;com.alibaba.boot&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;dubbo-spring-boot-starter&lt;/artifactId&gt;</span><br><span class="line">            &lt;version&gt;0.2.0&lt;/version&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;com.alibaba.boot&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;dubbo-spring-boot-actuator&lt;/artifactId&gt;</span><br><span class="line">            &lt;version&gt;0.2.0&lt;/version&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br><span class="line"></span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;com.yaolong&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;hello-dubbo-service-user-api&lt;/artifactId&gt;</span><br><span class="line">            &lt;version&gt;1.0.0-SNAPSHOT&lt;/version&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br><span class="line">    &lt;/dependencies&gt;</span><br><span class="line"></span><br><span class="line">    &lt;build&gt;</span><br><span class="line">        &lt;plugins&gt;</span><br><span class="line">            &lt;plugin&gt;</span><br><span class="line">                &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">                &lt;artifactId&gt;spring-boot-maven-plugin&lt;/artifactId&gt;</span><br><span class="line">                &lt;configuration&gt;</span><br><span class="line">                    &lt;mainClass&gt;com.yaolong.hello.dubbo.service.user.provider.HelloDubboServiceUserProviderApplication&lt;/mainClass&gt;</span><br><span class="line">                &lt;/configuration&gt;</span><br><span class="line">            &lt;/plugin&gt;</span><br><span class="line">        &lt;/plugins&gt;</span><br><span class="line">    &lt;/build&gt;</span><br><span class="line"></span><br><span class="line">&lt;/project&gt;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p><strong>application.yml</strong></p>
+<hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">spring:</span><br><span class="line">  application:</span><br><span class="line">    name:  hello-dubbo-service-user-provider</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">user:</span><br><span class="line">  service:</span><br><span class="line">    version: 1.0.0</span><br><span class="line"></span><br><span class="line">dubbo:</span><br><span class="line">  scan:</span><br><span class="line">    basePackages: com.yaolong.hello.dubbo.service.user.provider.api</span><br><span class="line">  application:</span><br><span class="line">    name: hello-dubbo-service-user-provider</span><br><span class="line">    id: hello-dubbo-service-user-provider</span><br><span class="line">    qos-enable: true</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  protocol:</span><br><span class="line">    id: dubbo</span><br><span class="line">    name: dubbo</span><br><span class="line">    status: server</span><br><span class="line">    port: 12345</span><br><span class="line"></span><br><span class="line">  registry:</span><br><span class="line">    id: zookeeper</span><br><span class="line">    address: zookeeper://192.168.211.131:2181?backup=192.168.211.131:2182,192.168.211.131:2183</span><br><span class="line"></span><br><span class="line"># Enables Dubbo All Endpoints</span><br><span class="line">management:</span><br><span class="line">  endpoint:</span><br><span class="line">    dubbo:</span><br><span class="line">      enabled: true</span><br><span class="line">    dubbo-shutdown:</span><br><span class="line">      enabled: true</span><br><span class="line">    dubbo-configs:</span><br><span class="line">      enabled: true</span><br><span class="line">    dubbo-services:</span><br><span class="line">      enabled: true</span><br><span class="line">    dubbo-references:</span><br><span class="line">      enabled: true</span><br><span class="line">    dubbo-properties:</span><br><span class="line">      enabled: true</span><br><span class="line">  # Dubbo Health</span><br><span class="line">  health:</span><br><span class="line">    dubbo:</span><br><span class="line">      status:</span><br><span class="line">        ## StatusChecker Name defaults (default : &quot;memory&quot;, &quot;load&quot; )</span><br><span class="line">        defaults: memory</span><br><span class="line">        ## StatusChecker Name extras (default : empty )</span><br><span class="line">        extras: load,threadpool</span><br></pre></td></tr></table></figure>
+
+<p><strong>HelloDubboServiceUserProviderApplication启动类</strong></p>
+<hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">package com.yaolong.hello.dubbo.service.user.provider;</span><br><span class="line"></span><br><span class="line">import com.alibaba.dubbo.container.Main;</span><br><span class="line">import org.springframework.boot.SpringApplication;</span><br><span class="line">import org.springframework.boot.autoconfigure.SpringBootApplication;</span><br><span class="line"></span><br><span class="line">@SpringBootApplication</span><br><span class="line">public class HelloDubboServiceUserProviderApplication &#123;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        SpringApplication.run(HelloDubboServiceUserProviderApplication.class, args);</span><br><span class="line"></span><br><span class="line">        Main.main(args);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>UserServiceImp 接口项目实现类</strong></p>
+<hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">package com.yaolong.hello.dubbo.service.user.provider.api.imp;</span><br><span class="line"></span><br><span class="line">import com.alibaba.dubbo.config.annotation.Service;</span><br><span class="line">import com.yaolong.hello.dubbo.service.user.api.UserService;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * @author yaoLong</span><br><span class="line"> * @date 2019/11/13  14:44</span><br><span class="line"> */</span><br><span class="line">@Service(version = &quot;$&#123;user.service.version&#125;&quot;)</span><br><span class="line">public class UserServiceImp implements UserService &#123;</span><br><span class="line">    @Override</span><br><span class="line">    public String sayHi() &#123;</span><br><span class="line">        return &quot;hello SayHi&quot;;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3、服务消费者项目-hello-dubbo-service-user-comsumer"><a href="#3、服务消费者项目-hello-dubbo-service-user-comsumer" class="headerlink" title="3、服务消费者项目 hello-dubbo-service-user-comsumer"></a>3、服务消费者项目 <code>hello-dubbo-service-user-comsumer</code></h3><p><strong>pom.xml</strong></p>
+<hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span><br><span class="line">&lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span><br><span class="line">         xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd&quot;&gt;</span><br><span class="line">    &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;</span><br><span class="line"></span><br><span class="line">    &lt;groupId&gt;com.yaolong&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;hello-dubbo-service-user-comsumer&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;1.0.0-SNAPSHOT&lt;/version&gt;</span><br><span class="line">    &lt;name&gt;hello-dubbo-service-user-comsumer&lt;/name&gt;</span><br><span class="line">    &lt;description&gt;Demo project for Spring Boot&lt;/description&gt;</span><br><span class="line"></span><br><span class="line">    &lt;parent&gt;</span><br><span class="line">        &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">        &lt;artifactId&gt;spring-boot-starter-parent&lt;/artifactId&gt;</span><br><span class="line">        &lt;version&gt;2.0.6.RELEASE&lt;/version&gt;</span><br><span class="line">        &lt;relativePath/&gt; &lt;!-- lookup parent from repository --&gt;</span><br><span class="line">    &lt;/parent&gt;</span><br><span class="line"></span><br><span class="line">    &lt;properties&gt;</span><br><span class="line">        &lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;</span><br><span class="line">        &lt;project.reporting.outputEncoding&gt;UTF-8&lt;/project.reporting.outputEncoding&gt;</span><br><span class="line">        &lt;java.version&gt;1.8&lt;/java.version&gt;</span><br><span class="line">    &lt;/properties&gt;</span><br><span class="line"></span><br><span class="line">    &lt;dependencies&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;spring-boot-starter-actuator&lt;/artifactId&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;spring-boot-starter-test&lt;/artifactId&gt;</span><br><span class="line">            &lt;scope&gt;test&lt;/scope&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;com.alibaba.boot&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;dubbo-spring-boot-starter&lt;/artifactId&gt;</span><br><span class="line">            &lt;version&gt;0.2.0&lt;/version&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;com.alibaba.boot&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;dubbo-spring-boot-actuator&lt;/artifactId&gt;</span><br><span class="line">            &lt;version&gt;0.2.1.RELEASE&lt;/version&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br><span class="line"></span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;com.yaolong&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;hello-dubbo-service-user-api&lt;/artifactId&gt;</span><br><span class="line">            &lt;version&gt;1.0.0-SNAPSHOT&lt;/version&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br><span class="line">    &lt;/dependencies&gt;</span><br><span class="line">    &lt;build&gt;</span><br><span class="line">        &lt;plugins&gt;</span><br><span class="line">            &lt;plugin&gt;</span><br><span class="line">                &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">                &lt;artifactId&gt;spring-boot-maven-plugin&lt;/artifactId&gt;</span><br><span class="line">                &lt;configuration&gt;</span><br><span class="line">                    &lt;mainClass&gt;com.yaolong.hello.dubbo.service.user.comsumer.HelloDubboServiceUserComsumerApplication&lt;/mainClass&gt;</span><br><span class="line">                &lt;/configuration&gt;</span><br><span class="line">            &lt;/plugin&gt;</span><br><span class="line">        &lt;/plugins&gt;</span><br><span class="line">    &lt;/build&gt;</span><br><span class="line"></span><br><span class="line">&lt;/project&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>application.yml</strong></p>
+<hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">spring:</span><br><span class="line">  application:</span><br><span class="line">    name:  hello-dubbo-service-user-comsumer</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">user:</span><br><span class="line">  service:</span><br><span class="line">    version: 1.0.0</span><br><span class="line"></span><br><span class="line">dubbo:</span><br><span class="line">  scan:</span><br><span class="line">    basePackages: com.yaolong.hello.dubbo.service.user.comsumer.controller</span><br><span class="line">  application:</span><br><span class="line">    name: hello-dubbo-service-user-comsumer</span><br><span class="line">    id: hello-dubbo-service-user-comsumer</span><br><span class="line">  protocol:</span><br><span class="line">    id: dubbo</span><br><span class="line">    name: dubbo</span><br><span class="line">    port: 12345</span><br><span class="line"></span><br><span class="line">  registry:</span><br><span class="line">    id: zookeeper</span><br><span class="line">    address: zookeeper://192.168.211.131:2181?backup=192.168.211.131:2182,192.168.211.131:2183</span><br><span class="line"></span><br><span class="line">server:</span><br><span class="line">  port: 9090</span><br></pre></td></tr></table></figure>
+
+<p><strong>HelloDubboServiceUserComsumerApplication 消费者启动类</strong></p>
+<hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">package com.yaolong.hello.dubbo.service.user.comsumer;</span><br><span class="line"></span><br><span class="line">import org.springframework.boot.SpringApplication;</span><br><span class="line">import org.springframework.boot.autoconfigure.SpringBootApplication;</span><br><span class="line"></span><br><span class="line">@SpringBootApplication</span><br><span class="line">public class HelloDubboServiceUserComsumerApplication &#123;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        SpringApplication.run(HelloDubboServiceUserComsumerApplication.class, args);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>UserController</strong></p>
+<hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">package com.yaolong.hello.dubbo.service.user.comsumer.controller;</span><br><span class="line"></span><br><span class="line">import com.alibaba.dubbo.config.annotation.Reference;</span><br><span class="line">import com.alibaba.dubbo.config.spring.context.annotation.EnableDubbo;</span><br><span class="line">import com.yaolong.hello.dubbo.service.user.api.UserService;</span><br><span class="line">import org.springframework.web.bind.annotation.RequestMapping;</span><br><span class="line">import org.springframework.web.bind.annotation.RequestMethod;</span><br><span class="line">import org.springframework.web.bind.annotation.RestController;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * @author yaoLong</span><br><span class="line"> * @date 2019/11/13  16:14</span><br><span class="line"> */</span><br><span class="line">@RestController</span><br><span class="line">@EnableDubbo</span><br><span class="line">public class UserController &#123;</span><br><span class="line"></span><br><span class="line">    @Reference(version = &quot;$&#123;user.service.version&#125;&quot;)</span><br><span class="line">    private UserService userService;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    @RequestMapping(value = &quot;hi&quot;, method = RequestMethod.GET)</span><br><span class="line">    public String sayHi()&#123;</span><br><span class="line">       return userService.sayHi();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p><strong>启动顺序:</strong></p>
+<p><code>hello-dubbo-service-user-comsumer</code>-&gt;<code>hello-dubbo-service-user-comsumer</code> </p>
+<p>浏览器访问：<a href="http://localhost:9090/hi" target="_blank" rel="noopener">http://localhost:9090/hi</a><br><img src="springboot%E6%95%B4%E5%90%88Dubbo+zookeeper/test.png" alt></p>
+<img src="/2019/11/13/springboot整合Dubbo+zookeeper/test.png" title="DubboAdmin">
+
+
+
+
+
+
+
+<p>再启动<code>DubboAdmin</code></p>
+<p>启动成功如图所示：</p>
+<p><img src="springboot%E6%95%B4%E5%90%88Dubbo+zookeeper/DubboAdmin.png" alt></p>
+<img src="/2019/11/13/springboot整合Dubbo+zookeeper/DubboAdmin.png" title="DubboAdmin">
+
+
+
+      <blockquote class="mdui-m-t-5">
+        
+        <strong>本文链接：</strong><a href="yaolong.top/2019/11/13/springboot整合Dubbo+zookeeper/">yaolong.top/2019/11/13/springboot整合Dubbo+zookeeper/</a>
+      </blockquote>
+      
+        <div class="mdui-text-center">
+          <button class="mdui-fab mdui-color-deep-orange mdui-text-color-white mdui-ripple" mdui-dialog="{target: '#donate'}" mdui-tooltip="{content: '打赏', position: 'top'}"><i class="mdui-icon material-icons">thumb_up</i></button>
+        </div>
+      
+    </div>
+    <footer class="mdui-card-actions">
+      
+        <a class="mdui-ripple article_categories-link" href="/categories/编程/">编程</a>
+      
+      
+        <a class="mdui-ripple article_tags-link" href="/tags/java/">java</a>
+      
+    </footer>
+    
+      <div class="mdui-dialog" id="donate">
+        <div class="mdui-tab mdui-tab-centered" mdui-tab>
+          
+            <a href="#donate-0" class="mdui-ripple">支付宝</a>
+          
+            <a href="#donate-1" class="mdui-ripple">微信支付</a>
+          
+        </div>
+        
+        
+          <div id="donate-0" class="mdui-p-a-2 mdui-typo mdui-text-center">
+            
+              <img src="/images/alipay.jpg" style="width: 300px;">
+            
+          </div>
+        
+          <div id="donate-1" class="mdui-p-a-2 mdui-typo mdui-text-center">
+            
+              <img src="/images/wechat.jpg" style="width: 300px;">
+            
+          </div>
+        
+      </div>
+    
+  </article>
+  <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+  <script>$("#main article .mdui-card-content img.fancybox").on("click",function(e){$.fancybox.open({src:$(this).attr("src")});});</script>
+
+
+  <nav id="paginator">
+    
+    <div class="spacer"></div>
+    
+      <a rel="next" class="extend next" href="/2019/11/10/什么是分布式协调技术/">
+        下一篇&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button aria-label="next" class="mdui-btn mdui-btn-raised mdui-btn-dense mdui-btn-icon mdui-color-theme-accent mdui-ripple"><i class="mdui-icon material-icons">arrow_forward</i></button>
+      </a>
+    
+  </nav>
+
+
+  <div id="comment" class="mdui-m-t-5">
+    <div class="vcomment"></div>
+<script src="//cdnjs.loli.net/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+  var GUEST_INFO = ['nick', 'mail', 'link'];
+  var guest_info = 'nick,mail,link'.split(',').filter(function (item) {
+    return GUEST_INFO.indexOf(item) > -1;
+  });
+  var notify = 'false' === 'true';
+  var verify = 'false' === 'true';
+  new Valine({
+    av: AV,
+    el: '.vcomment',
+    notify: notify,
+    verify: verify,
+    appId: "qMIo0vb5e8uDx7mfvb4jhnfD-gzGzoHsz",
+    appKey: "Q2GIKfbjU0JXIbJCi2dHecAs",
+    placeholder: "ヾﾉ≧∀≦)o来啊，快活啊!欢迎评论哟",
+    pageSize: '10',
+    avatar: 'mm',
+    lang: '',
+    guest_info: guest_info
+  });
+</script>
+  </div>
+
+
+</main>
+  <footer id="footer" class="mdui-m-t-5 mdui-p-y-3 mdui-color-theme">
+  <div class="mdui-p-y-0 mdui-text-center">
+    
+    
+    
+    
+    
+    
+    
+      <a href="https://github.com/yaolong1" target="_blank"><i class="mdui-p-a-1 mdui-icon iconfont mdui-text-color-theme-a100">&#xe7ab;</i></a>
+    
+    
+    
+    
+    
+      <a href="tencent://message/?uin=1638538651&Menu=yes" target="_blank"><i class="mdui-p-a-1 mdui-icon iconfont mdui-text-color-theme-a100">&#xe651;</i></a>
+    
+    
+  </div>
+  <div class="mdui-p-y-1 mdui-text-center">
+    Copyright &copy; 2019 - 2019 殷跃龙<br>
+    Powered by <a href="https://hexo.io/" target="_blank" class="mdui-text-color-theme-accent">Hexo</a>
+    <br>
+      <span id="busuanzi_container_site_pv" style="display: none;"><i class="iconfont">&#xe7fd;</i> <span id="busuanzi_value_site_pv"></span></span> &nbsp;&nbsp;
+      <span id="busuanzi_container_site_uv" style="display: none;"><i class="iconfont">&#xe601;</i> <span id="busuanzi_value_site_uv"></span></span>
+    
+  </div>
+</footer>
+  <button id="gotop" class="mdui-fab mdui-fab-fixed mdui-fab-hide mdui-ripple mdui-color-theme-accent"><i class="mdui-icon material-icons">arrow_upward</i></button>
+  <script async src="http://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script src="/js/mdui.js"></script>
+<script src="/js/script.js"></script>
+</body>
+</html>
